@@ -1,0 +1,621 @@
+Command: vcs -V -R -full64 -sverilog -ntb_opts uvm-1.2 +v2k -debug_access+all -l \
+fell.log +incdir+apb +incdir+can +incdir+apb/can_ral_sequence can/can_top.sv
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/bin/vcs1 -Mcc=gcc \
+-Mcplusplus=g++ -Masflags= -Mcfl= -pipe -DVCSMX -DUVM_DPI_DO_TYPE_CHECK -fPIC -O \
+-I/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/include  -Mxllcflags= \
+-Mxcflags= -pipe -DVCSMX -DUVM_DPI_DO_TYPE_CHECK -fPIC -I/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/include \
+-Mldflags= -rdynamic  -Mout=simv -Mamsrun="" -Mvcsaceobjs="" -Mobjects=" /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libvirsim.so \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/liberrorinf.so \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libsnpsmalloc.so \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libvfs.so " \
+-Mexternalobj= -Msaverestoreobj=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_save_restore_new.o \
+-Mcrt0= -Mcrtn="" -Mcsrc="/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dpi/uvm_dpi.cc \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/dpi/uvm_verdi_dpi.cpp \
+" -Msyslibs=/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/pli.a \
+-ldl  -l fell.log +define+UVM_VERDI_VIF_RECORD +define+UVM_VCS_RECORD +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv \
++incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi \
+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv \
+-Xvcs_run_simv=1 -V -full64 -ntb_opts uvm-1.2 +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/ \
++v2k -debug_access+all +vpi +vcsd1 +itf+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcsdp_lite.tab \
+-picarchive -P /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab \
+-fsdb -sverilog -gen_obj +incdir+apb +incdir+can +incdir+apb/can_ral_sequence can/can_top.sv \
+
+                         Chronologic VCS (TM)
+      Version Q-2020.03-SP2-8_Full64 -- Fri Nov 13 14:58:36 2026
+               Copyright (c) 1991-2020 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_version_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_global_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/snps_macros.svp'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_message_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_phase_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_object_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_printer_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_tlm_defines.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm_imps.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_tlm_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_sequence_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_callback_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_reg_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_deprecated_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dpi/uvm_dpi.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dpi/uvm_hdl.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dpi/uvm_dpi.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dpi/uvm_svcmd_dpi.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dpi/uvm_dpi.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dpi/uvm_regex.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dpi/uvm_dpi.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_coreservice.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_version.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_object_globals.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_misc.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_object.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_pool.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_queue.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_factory.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_registry.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_spell_chkr.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_resource.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_resource_specializations.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_resource_db.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_config_db.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_printer.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_comparer.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_packer.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_links.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_tr_database.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_tr_stream.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_recorder.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_event_callback.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_event.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_barrier.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_callback.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_callback.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_message.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_catcher.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_server.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_handler.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_object.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_transaction.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_phase.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_domain.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_bottomup_phase.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_topdown_phase.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_task_phase.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_common_phases.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_runtime_phases.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_component.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_component.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_objection.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_heartbeat.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_globals.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_cmdline_processor.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_traversal.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dap/uvm_dap.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dap/uvm_set_get_dap_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dap/uvm_dap.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dap/uvm_simple_lock_dap.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dap/uvm_dap.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dap/uvm_get_to_lock_dap.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dap/uvm_dap.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dap/uvm_set_before_get_dap.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/dap/uvm_dap.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm_ifs.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_sqr_ifs.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_port_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm_imps.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_imps.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_ports.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_exports.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_analysis_port.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm_fifo_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm_fifos.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm_req_rsp.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_sqr_connections.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm1/uvm_tlm.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_pair.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_policies.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_in_order_comparator.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_algorithmic_comparator.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_random_stimulus.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_subscriber.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_monitor.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_driver.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_push_driver.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_scoreboard.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_agent.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_env.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_test.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/comps/uvm_comps.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_sequence_item.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_sequencer_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_sequencer_analysis_fifo.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_sequencer_param_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_sequencer.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_push_sequencer.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_sequence_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_sequence.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_sequence_library.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_sequence_builtin.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/seq/uvm_seq.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2_time.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2_generic_payload.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2_ifs.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2_imps.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2_ports.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2_exports.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2_sockets_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2_sockets.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/tlm2/uvm_tlm2.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_item.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_adapter.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_predictor.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_sequence.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_cbs.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_backdoor.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_field.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_vreg_field.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_indirect.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_fifo.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_file.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_mem_mam.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_vreg.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_mem.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_map.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_block.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/sequences/uvm_reg_hw_reset_seq.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/sequences/uvm_reg_bit_bash_seq.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/sequences/uvm_mem_walk_seq.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/sequences/uvm_mem_access_seq.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/sequences/uvm_reg_access_seq.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/sequences/uvm_reg_mem_shared_access_seq.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/sequences/uvm_reg_mem_built_in_seq.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/snps_uvm_reg_bank.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/reg/uvm_reg_model.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/vcs_uvm_alt.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_pkg.sv'.
+Parsing design file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv'
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/msglog.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_msglog_report_server.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_recorder.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_tr_database.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_tr_stream.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_tr_database.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_recorder.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_record_interface.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_global_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_record_interface.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing design file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_recorder.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_pli_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_recorder.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_tr_database.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_tr_stream.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_tr_database.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_recorder.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_reg_map_recording.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_message_catcher.svh'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_pli_base.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_message_catcher.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_factory.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/./dpi/uvm_verdi_dpi.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_reg_recording.sv'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/include/verdi_trans_recorder_dpi.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_verdi_pli.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'.
+Parsing design file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'
+Parsing design file 'can/can_top.sv'
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/apb_interface/apb_interface.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/synchronizers/reset_synchronizer.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/synchronizers/pulse_synchronizer.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/synchronizers/two_ff_synchronizer.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/bit_timing_engine/can_baud_gen.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/bit_timing_engine/can_bit_timing_logic.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/bit_timing_engine/can_btl_top.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/can_reg_file/can_reg_file.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/fifo/can_fifo.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/rx_path/acceptance_filter.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/rx_path/bit_destuff.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/rx_path/crc_check.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/rx_path/rx_fifo.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/rx_path/rx_path_top.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/tx_path/can_bsp.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/tx_path/crc_gen.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/tx_path/tx_fifo.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/tx_path/can_tx_path_core.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/error_management/error_management_logic.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/can_channel/can_channel_core.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file '../rtl/top/can_top.v'.
+Back to file 'can/can_top.sv'.
+Parsing included file 'apb/apb_interface.sv'.
+Back to file 'can/can_top.sv'.
+Parsing included file 'can/can_interface.sv'.
+Back to file 'can/can_top.sv'.
+Parsing included file 'apb/apb_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/apb_sequence_item.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/apb_driver.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/apb_active_monitor.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/apb_passive_monitor.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/apb_adapter.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/apb_agent.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/can_reg_class.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/can_reg_block.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/can_ral_sequence/can_base_reg_seq.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/can_ral_sequence/can_tx_basic_seq.sv'.
+Back to file 'apb/apb_pkg.sv'.
+Back to file 'can/can_top.sv'.
+Parsing included file 'can/can_pkg.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_timing_config.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_sequence_item.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_sequencer.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_driver.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_active_monitor.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_passive_monitor.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_agent.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_subscriber.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_scoreboard.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_virtual_sequencer.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_env.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_sequences/basic_can_sequence.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_sequences/can_ack_dut_frame.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_sequences/can_drive_basic_frame.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_test/can_frame_dut_ack_virtual_seq_test.sv'.
+Back to file 'can/can_pkg.sv'.
+Back to file 'can/can_top.sv'.
+Top Level Modules:
+       uvm_custom_install_recording
+       uvm_custom_install_verdi_recording
+       top
+No TimeScale specified
+Starting vcs inline pass...
+
+16 modules and 0 UDP read.
+recompiling package can_pkg
+	However, due to incremental compilation, only 1 module needs to be compiled. 
+( cd csrc ; make -f Makefile SNPS_VCS_TMPDIR=/tmp/vcs_20261113092835_116872 product \
+)
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
+rm -f _cuarc0.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib \
+-L/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib  -Wl,-rpath-link=./ \
+/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _117318_archive_1.so _prev_archive_1.so \
+_cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o \
+rmar_llvm_0_0.o          -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile \
+-luclinative /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
+_vcs_pli_stub_.o   /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_save_restore_new.o \
+/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/pli.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+Running simv -V +v2k -a fell.log 
+Command: /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/./simv -V +v2k -a fell.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Nov 13 14:58 2026
+VCS Build Date = Sep 11 2021 20:22:52
+Start run at Nov 13 14:58 2026
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test can_frame_dut_ack_virtual_seq_test...
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean is_active|timing_cfg
+UVM_INFO can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv(20) @ 0: uvm_test_top.can_e.virtual_seqr@@v_seq [VSEQ] Starting CAN ACK sequence
+UVM_INFO can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv(34) @ 0: uvm_test_top.can_e.virtual_seqr@@v_seq [VSEQ] Starting APB RAL sequence
+UVM_INFO can/can_sequences/can_ack_dut_frame.sv(11) @ 0: uvm_test_top.can_e.can_agt.sequencer@@can_seq [CAN_ACK_SEQ] Creating ACK request
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(49) @ 0: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Disabling CAN controller
+UVM_INFO can/can_sequences/can_ack_dut_frame.sv(15) @ 0: uvm_test_top.can_e.can_agt.sequencer@@can_seq [CAN_ACK_SEQ] Got grant from CAN sequencer
+UVM_INFO can/can_driver.sv(626) @ 0: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Received CAN sequence item
+UVM_INFO apb/apb_driver.sv(31) @ 0: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 25: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(53) @ 25: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Configuring BRPR
+UVM_INFO apb/apb_driver.sv(31) @ 25: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 55: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(56) @ 55: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Configuring BTR
+UVM_INFO apb/apb_driver.sv(31) @ 55: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 85: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 85: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(63) @ 115: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Enabling CAN controller
+UVM_INFO apb/apb_driver.sv(31) @ 115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 145: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 145: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(67) @ 175: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] CAN Status after enable = 18000018
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(70) @ 175: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Writing TX_ID
+UVM_INFO apb/apb_driver.sv(31) @ 175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 205: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(73) @ 205: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Writing TX_DLC
+UVM_INFO apb/apb_driver.sv(31) @ 205: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(76) @ 235: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Writing TX_DW1
+UVM_INFO apb/apb_driver.sv(31) @ 235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 265: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(80) @ 265: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Pushing frame into TX FIFO
+UVM_INFO apb/apb_driver.sv(31) @ 265: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 325: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(87) @ 325: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] CAN Status = 18000018
+UVM_INFO apb/apb_driver.sv(31) @ 325: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(90) @ 355: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Interrupt Status = 00000000
+UVM_INFO apb/apb_driver.sv(31) @ 355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 385: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(93) @ 385: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Error Counter = 00000000
+UVM_INFO can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv(36) @ 385: uvm_test_top.can_e.virtual_seqr@@v_seq [VSEQ] APB RAL sequence completed
+UVM_FATAL /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_phase.svh(1495) @ 9200: reporter [PH_TIMEOUT] Default timeout of 9200 hit, indicating a probable testbench issue
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 9200: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_server.svh(894) @ 9200: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   48
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    1
+** Report counts by id
+[APB_DRV]    26
+[CAN_ACK_SEQ]     2
+[CAN_DRV]     1
+[CAN_TX_SEQ]    12
+[PH_TIMEOUT]     1
+[RNTST]     1
+[UVM/CONFIGDB/SPELLCHK]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[VSEQ]     3
+
+$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh", line 135.
+$finish at simulation time                 9200
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 9200
+CPU Time:      0.630 seconds;       Data structure size:   0.7Mb
+Fri Nov 13 14:59:00 2026
+CPU time: 15.871 seconds to compile + .538 seconds to elab + .873 seconds to link + .683 seconds in simulation

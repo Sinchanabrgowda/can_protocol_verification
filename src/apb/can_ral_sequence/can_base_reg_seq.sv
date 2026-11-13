@@ -1,7 +1,7 @@
 class can_base_reg_seq extends uvm_sequence;
   `uvm_object_utils(can_base_reg_seq)
 
-  can_reg_block regmodel;
+  can_reg_block can_regmodel;
 
   function new(string name = "can_base_reg_seq");
     super.new(name);

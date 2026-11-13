@@ -197,41 +197,41 @@ class can_reg_block extends uvm_reg_block;
 
     default_map = create_map("default_map", 'h000, 4, UVM_LITTLE_ENDIAN);
 
-    default_map.add_reg(srr_reg_inst,       'h000, "RW");
-    default_map.add_reg(msr_reg_inst,       'h004, "RW");
-    default_map.add_reg(brpr_reg_inst,      'h008, "RW");
-    default_map.add_reg(btr_reg_inst,       'h00C, "RW");
-    default_map.add_reg(ecr_reg_inst,       'h010, "RO");
-    default_map.add_reg(esr_reg_inst,       'h014, "RW");
-    default_map.add_reg(sr_reg_inst,        'h018, "RO");
-    default_map.add_reg(isr_reg_inst,       'h01C, "RO");
-    default_map.add_reg(ier_reg_inst,       'h020, "RW");
-    default_map.add_reg(icr_reg_inst,       'h024, "WO");
+    default_map.add_reg(srr_reg_inst, 'h000, "RW");
+    default_map.add_reg(msr_reg_inst, 'h004, "RW");
+    default_map.add_reg(brpr_reg_inst,'h008, "RW");
+    default_map.add_reg(btr_reg_inst,'h00C, "RW");
+    default_map.add_reg(ecr_reg_inst,'h010, "RO");
+    default_map.add_reg(esr_reg_inst, 'h014, "RW");
+    default_map.add_reg(sr_reg_inst, 'h018, "RO");
+    default_map.add_reg(isr_reg_inst, 'h01C, "RO");
+    default_map.add_reg(ier_reg_inst, 'h020, "RW");
+    default_map.add_reg(icr_reg_inst, 'h024, "WO");
 
-    default_map.add_reg(tx_id_reg_inst,     'h030, "WO");
-    default_map.add_reg(tx_dlc_reg_inst,    'h034, "WO");
-    default_map.add_reg(tx_dw1_reg_inst,    'h038, "WO");
-    default_map.add_reg(tx_dw2_reg_inst,    'h03C, "WO");
+    default_map.add_reg(tx_id_reg_inst, 'h030, "WO");
+    default_map.add_reg(tx_dlc_reg_inst, 'h034, "WO");
+    default_map.add_reg(tx_dw1_reg_inst, 'h038, "WO");
+    default_map.add_reg(tx_dw2_reg_inst, 'h03C, "WO");
 
-    default_map.add_reg(txhpb_id_reg_inst,  'h040, "WO");
+    default_map.add_reg(txhpb_id_reg_inst, 'h040, "WO");
     default_map.add_reg(txhpb_dlc_reg_inst, 'h044, "WO");
     default_map.add_reg(txhpb_dw1_reg_inst, 'h048, "WO");
     default_map.add_reg(txhpb_dw2_reg_inst, 'h04C, "WO");
 
-    default_map.add_reg(rx_id_reg_inst,     'h050, "RO");
-    default_map.add_reg(rx_dlc_reg_inst,    'h054, "RO");
-    default_map.add_reg(rx_dw1_reg_inst,    'h058, "RO");
-    default_map.add_reg(rx_dw2_reg_inst,    'h05C, "RO");
+    default_map.add_reg(rx_id_reg_inst, 'h050, "RO");
+    default_map.add_reg(rx_dlc_reg_inst, 'h054, "RO");
+    default_map.add_reg(rx_dw1_reg_inst, 'h058, "RO");
+    default_map.add_reg(rx_dw2_reg_inst, 'h05C, "RO");
 
-    default_map.add_reg(afr_reg_inst,       'h060, "RW");
-    default_map.add_reg(afmr1_reg_inst,     'h064, "RW");
-    default_map.add_reg(afir1_reg_inst,     'h068, "RW");
-    default_map.add_reg(afmr2_reg_inst,     'h06C, "RW");
-    default_map.add_reg(afir2_reg_inst,     'h070, "RW");
-    default_map.add_reg(afmr3_reg_inst,     'h074, "RW");
-    default_map.add_reg(afir3_reg_inst,     'h078, "RW");
-    default_map.add_reg(afmr4_reg_inst,     'h07C, "RW");
-    default_map.add_reg(afir4_reg_inst,     'h080, "RW");
+    default_map.add_reg(afr_reg_inst, 'h060, "RW");
+    default_map.add_reg(afmr1_reg_inst, 'h064, "RW");
+    default_map.add_reg(afir1_reg_inst, 'h068, "RW");
+    default_map.add_reg(afmr2_reg_inst, 'h06C, "RW");
+    default_map.add_reg(afir2_reg_inst, 'h070, "RW");
+    default_map.add_reg(afmr3_reg_inst, 'h074, "RW");
+    default_map.add_reg(afir3_reg_inst, 'h078, "RW");
+    default_map.add_reg(afmr4_reg_inst,'h07C, "RW");
+    default_map.add_reg(afir4_reg_inst, 'h080, "RW");
 
     lock_model();
   endfunction

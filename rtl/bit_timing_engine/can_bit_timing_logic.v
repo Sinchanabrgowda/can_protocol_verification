@@ -1,0 +1,261 @@
+
+module can_bit_timing_logic (
+    input  wire       can_clk,
+    input  wire       can_rst_n_sync,
+
+    input  wire       config_mode,
+    input  wire       tq_tick,
+
+    input  wire [3:0] tseg1,
+    input  wire [2:0] tseg2,
+    input  wire [1:0] sjw,
+
+    input  wire       rx_sync,
+    input  wire       bus_idle,     
+    input  wire       tx_active,    
+    input  wire       tx_bit,      
+
+    output wire       hard_sync_pulse,
+    output reg        resync_pulse,
+    output reg        sample_point,
+    output reg        sampled_bit,
+    output reg        bit_tick
+);
+
+    localparam DOMINANT  = 1'b0;
+    localparam RECESSIVE = 1'b1;
+
+    localparam [1:0] SEG_IDLE  = 2'b00;
+    localparam [1:0] SEG_SYNC  = 2'b01;
+    localparam [1:0] SEG_TSEG1 = 2'b10;
+    localparam [1:0] SEG_TSEG2 = 2'b11;
+
+ 
+    localparam [4:0] MAX_TSEG1 = 5'd16;
+
+    reg [4:0] tseg1_eff;
+    reg [4:0] tseg2_eff;
+    reg [4:0] sjw_eff;
+
+    wire [4:0] tseg1_calc = {1'b0, tseg1} + 5'd1;
+    wire [4:0] tseg2_calc = {2'b00, tseg2} + 5'd1;
+    wire [4:0] sjw_calc   = {3'b000, sjw} + 5'd1;
+
+    always @(posedge can_clk or negedge can_rst_n_sync) begin
+        if (!can_rst_n_sync) begin
+            tseg1_eff <= 5'd6;
+            tseg2_eff <= 5'd3;
+            sjw_eff   <= 5'd2;
+        end else if (config_mode) begin
+            tseg1_eff <= tseg1_calc;
+            tseg2_eff <= tseg2_calc;
+
+           
+            if (sjw_calc > tseg1_calc)
+                sjw_eff <= tseg1_calc;
+            else if (sjw_calc > tseg2_calc)
+                sjw_eff <= tseg2_calc;
+            else
+                sjw_eff <= sjw_calc;
+        end
+    end
+
+    reg rx_sync_q;
+    reg edge_pending;
+
+    wire dominant_edge = (rx_sync_q == RECESSIVE) && (rx_sync == DOMINANT);
+
+    reg tx_active_q;
+    always @(posedge can_clk or negedge can_rst_n_sync) begin
+        if (!can_rst_n_sync) tx_active_q <= 1'b0;
+        else tx_active_q <= tx_active;
+    end
+
+    reg [1:0] present_seg;
+
+    wire tx_sof_start = tx_active && !tx_active_q;
+    wire rx_sof_edge  = dominant_edge && (bus_idle || present_seg == SEG_IDLE) && !(tx_active && (tx_bit == DOMINANT));
+    wire hard_sync_now = tx_sof_start || rx_sof_edge;
+    assign hard_sync_pulse = hard_sync_now;
+
+    wire qualified_edge = dominant_edge &&
+                          (sampled_bit == RECESSIVE) &&
+                          !(tx_active && (tx_bit == DOMINANT));
+
+    wire sync_edge = qualified_edge;
+    wire new_edge = sync_edge;
+    wire edge_available = edge_pending || new_edge;
+
+    reg [4:0] tq_count;
+    reg [4:0] cur_tseg1;
+    reg [4:0] cur_tseg2;
+    reg       sync_done_this_bit;
+
+    wire [4:0] tq_elapsed = tq_count + 5'd1;
+
+    wire [4:0] late_error = tq_elapsed;
+    wire [4:0] late_delta = (late_error > sjw_eff) ? sjw_eff : late_error;
+
+
+    wire [4:0] early_error = (cur_tseg2 > tq_elapsed) ? (cur_tseg2 - tq_elapsed) : 5'd0;
+    wire [4:0] early_delta = (early_error > sjw_eff) ? sjw_eff : early_error;
+
+    reg [4:0] adjusted_tseg1;
+    reg [4:0] adjusted_tseg2;
+    reg [5:0] tseg1_extended;
+
+    always @* begin
+        tseg1_extended = {1'b0, cur_tseg1} + {1'b0, late_delta};
+        adjusted_tseg1 = (tseg1_extended > {1'b0, MAX_TSEG1}) ? MAX_TSEG1 : tseg1_extended[4:0];
+        adjusted_tseg2 = (cur_tseg2 > early_delta) ? (cur_tseg2 - early_delta) : 5'd1;
+    end
+
+    wire consume_edge = tq_tick && edge_available;
+
+    always @(posedge can_clk or negedge can_rst_n_sync) begin
+        if (!can_rst_n_sync || config_mode) begin
+            rx_sync_q    <= RECESSIVE;
+            edge_pending <= 1'b0;
+        end else if (hard_sync_now) begin
+            rx_sync_q    <= rx_sync;
+            edge_pending <= 1'b0;
+        end else begin
+            rx_sync_q <= rx_sync;
+            if (new_edge) begin
+                edge_pending <= (consume_edge && !edge_pending) ? 1'b0 : 1'b1;
+            end else if (consume_edge) begin
+                edge_pending <= 1'b0;
+            end
+        end
+    end
+
+    reg [1:0] next_seg;
+    reg [4:0] next_tq_count;
+    reg [4:0] next_cur_tseg1;
+    reg [4:0] next_cur_tseg2;
+    reg       next_sync_done_this_bit;
+    reg       next_sample_point;
+    reg       next_sampled_bit;
+    reg       next_resync_pulse;
+    reg       next_bit_tick;
+
+    always @* begin
+        next_seg                = present_seg;
+        next_tq_count           = tq_count;
+        next_cur_tseg1          = cur_tseg1;
+        next_cur_tseg2          = cur_tseg2;
+        next_sync_done_this_bit = sync_done_this_bit;
+        next_sample_point       = 1'b0;
+        next_sampled_bit        = sampled_bit;
+        next_resync_pulse       = 1'b0;
+        next_bit_tick           = 1'b0;
+
+        if (tq_tick) begin
+            case (present_seg)
+                SEG_IDLE: begin
+                   
+                end
+
+                SEG_SYNC: begin
+                    next_seg                = SEG_TSEG1;
+                    next_tq_count           = 5'd0;
+                    next_sync_done_this_bit = 1'b0;
+                end
+
+                SEG_TSEG1: begin
+                    if (edge_available && !sync_done_this_bit) begin
+                        next_cur_tseg1          = adjusted_tseg1;
+                        next_sync_done_this_bit = 1'b1;
+                        next_resync_pulse       = 1'b1;
+                        if (tq_elapsed >= adjusted_tseg1) begin
+                            next_sample_point = 1'b1;
+                            next_sampled_bit  = rx_sync;
+                            next_seg          = SEG_TSEG2;
+                            next_tq_count     = 5'd0;
+                        end else begin
+                            next_tq_count = tq_elapsed;
+                        end
+                    end else if (tq_elapsed >= cur_tseg1) begin
+                        next_sample_point = 1'b1;
+                        next_sampled_bit  = rx_sync;
+                        next_seg          = SEG_TSEG2;
+                        next_tq_count     = 5'd0;
+                    end else begin
+                        next_tq_count = tq_elapsed;
+                    end
+                end
+
+                SEG_TSEG2: begin
+                    if (edge_available && !sync_done_this_bit) begin
+                        next_cur_tseg2          = adjusted_tseg2;
+                        next_sync_done_this_bit = 1'b1;
+                        next_resync_pulse       = 1'b1;
+                        if (tq_elapsed >= adjusted_tseg2) begin
+                            next_bit_tick    = 1'b1;
+                            next_cur_tseg1   = tseg1_eff;
+                            next_cur_tseg2   = tseg2_eff;
+                            next_tq_count    = 5'd0;
+                            if (bus_idle && !tx_active)
+                                next_seg = SEG_IDLE;
+                            else
+                                next_seg = SEG_SYNC;
+                        end else begin
+                            next_tq_count = tq_elapsed;
+                        end
+                    end else if (tq_elapsed >= cur_tseg2) begin
+                        next_bit_tick    = 1'b1;
+                        next_cur_tseg1   = tseg1_eff;
+                        next_cur_tseg2   = tseg2_eff;
+                        next_tq_count    = 5'd0;
+                        if (bus_idle && !tx_active)
+                            next_seg = SEG_IDLE;
+                        else
+                            next_seg = SEG_SYNC;
+                    end else begin
+                        next_tq_count = tq_elapsed;
+                    end
+                end
+
+                default: begin
+                    next_seg      = SEG_IDLE;
+                    next_tq_count = 5'd0;
+                end
+            endcase
+        end
+    end
+
+    always @(posedge can_clk or negedge can_rst_n_sync) begin
+        if (!can_rst_n_sync || config_mode) begin
+            present_seg         <= SEG_IDLE;
+            tq_count            <= 5'd0;
+            cur_tseg1           <= 5'd6;
+            cur_tseg2           <= 5'd3;
+            sync_done_this_bit  <= 1'b0;
+            sample_point        <= 1'b0;
+            sampled_bit         <= RECESSIVE;
+            resync_pulse        <= 1'b0;
+            bit_tick            <= 1'b0;
+        end else if (hard_sync_now) begin
+            present_seg         <= SEG_SYNC;
+            tq_count            <= 5'd0;
+            cur_tseg1           <= tseg1_eff;
+            cur_tseg2           <= tseg2_eff;
+            sync_done_this_bit  <= 1'b0;
+            sample_point        <= 1'b0;
+            sampled_bit         <= DOMINANT;
+            resync_pulse        <= 1'b0;
+            bit_tick            <= 1'b0;
+        end else begin
+            present_seg         <= next_seg;
+            tq_count            <= next_tq_count;
+            cur_tseg1           <= next_cur_tseg1;
+            cur_tseg2           <= next_cur_tseg2;
+            sync_done_this_bit  <= next_sync_done_this_bit;
+            sample_point        <= next_sample_point;
+            sampled_bit         <= next_sampled_bit;
+            resync_pulse        <= next_resync_pulse;
+            bit_tick            <= next_bit_tick;
+        end
+    end
+
+endmodule

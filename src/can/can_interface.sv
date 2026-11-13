@@ -1,7 +1,4 @@
-interface can_interface(
-  input logic can_clk,
-  input logic can_resetn
-);
+interface can_interface(input logic can_clk,  input logic can_resetn);
 
   logic can_rx;
   logic can_tx;
@@ -26,16 +23,8 @@ endclocking
   endclocking
 
 
-  modport DRIVER (
-    clocking driver_cb,
-    input can_clk,
-    input can_resetn
-  );
+  modport DRIVER ( clocking driver_cb,input can_clk, input can_resetn );
 
-  modport MONITOR (
-    clocking monitor_cb,
-    input can_clk,
-    input can_resetn
-  );
+  modport MONITOR ( clocking monitor_cb,input can_clk,input can_resetn);
 
 endinterface

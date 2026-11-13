@@ -1,9 +1,9 @@
 class apb_active_monitor extends uvm_monitor;
   `uvm_component_utils(apb_active_monitor)
 
-  virtual apb_interface vif;
+  virtual apb_vif vif;
 
-  uvm_analysis_port #(apb_seq_item) analysis_port;
+  uvm_analysis_port #(apb_sequence_item) analysis_port;
 
   function new(string name = "apb_active_monitor", uvm_component parent = null);
     super.new(name, parent);
@@ -12,29 +12,24 @@ class apb_active_monitor extends uvm_monitor;
 
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
-
-    if (!uvm_config_db#(virtual apb_interface)::get(this, "", "vif", vif))
+    if (!uvm_config_db#(virtual apb_vif)::get(this, "", "vif", vif))
       `uvm_fatal("APB_MONITOR", "APB interface not found")
   endfunction
 
   task run_phase(uvm_phase phase);
-    apb_seq_item tr;
+    apb_sequence_item tr;
 
     forever begin
       @(vif.monitor_cb);
 
-      if (vif.monitor_cb.s_apb_psel === 1'b1 &&
-          vif.monitor_cb.s_apb_penable === 1'b1 &&
-          vif.monitor_cb.s_apb_pready === 1'b1) begin
-
-        tr = can_apb_seq_item::type_id::create("tr", this);
-
-        tr.paddr   = vif.monitor_cb.s_apb_paddr;
-        tr.pwrite  = vif.monitor_cb.s_apb_pwrite;
-        tr.pwdata  = vif.monitor_cb.s_apb_pwdata;
-        tr.pstrb   = vif.monitor_cb.s_apb_pstrb;
-        tr.pprot   = vif.monitor_cb.s_apb_pprot;
-        tr.prdata  = vif.monitor_cb.s_apb_prdata;
+      if (vif.monitor_cb.s_apb_psel === 1'b1 && vif.monitor_cb.s_apb_penable === 1'b1 && vif.monitor_cb.s_apb_pready === 1'b1) begin
+        tr = apb_sequence_item::type_id::create("tr", this);
+        tr.paddr = vif.monitor_cb.s_apb_paddr;
+        tr.pwrite = vif.monitor_cb.s_apb_pwrite;
+        tr.pwdata= vif.monitor_cb.s_apb_pwdata;
+        tr.pstrb = vif.monitor_cb.s_apb_pstrb;
+        tr.pprot = vif.monitor_cb.s_apb_pprot;
+        tr.prdata = vif.monitor_cb.s_apb_prdata;
         tr.pslverr = vif.monitor_cb.s_apb_pslverr;
 
         analysis_port.write(tr);

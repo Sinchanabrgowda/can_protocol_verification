@@ -1,17 +1,17 @@
-`uvm_analysis_imp_decl(_apb_active)
-`uvm_analysis_imp_decl(_apb_passive)
-`uvm_analysis_imp_decl(_can_active)
-`uvm_analysis_imp_decl(_can_passive)
+`uvm_analysis_imp_decl(_apb_active1)
+`uvm_analysis_imp_decl(_apb_passive1)
+`uvm_analysis_imp_decl(_can_active1)
+`uvm_analysis_imp_decl(_can_passive1)
 
 class can_subscriber extends uvm_component;
   `uvm_component_utils(can_subscriber)
 
-  uvm_analysis_imp_apb_active #(apb_seq_item, can_subscriber) apb_active_port;
-  uvm_analysis_imp_apb_passive #(apb_seq_item, can_subscriber) apb_passive_port;
-  uvm_analysis_imp_can_active #(can_sequence_item, can_subscriber) can_active_port;
-  uvm_analysis_imp_can_passive #(can_sequence_item, can_subscriber) can_passive_port;
+  uvm_analysis_imp_apb_active1 #(apb_sequence_item, can_subscriber) apb_active_port;
+  uvm_analysis_imp_apb_passive1 #(apb_sequence_item, can_subscriber) apb_passive_port;
+  uvm_analysis_imp_can_active1 #(can_sequence_item, can_subscriber) can_active_port;
+  uvm_analysis_imp_can_passive1 #(can_sequence_item, can_subscriber) can_passive_port;
 
-  apb_seq_item apb_cov_item;
+  apb_sequence_item apb_cov_item;
   can_sequence_item can_cov_item;
 
   real apb_item_cov;
@@ -155,22 +155,22 @@ class can_subscriber extends uvm_component;
     can_cg = new();
   endfunction
 
-  function void write_apb_active(apb_seq_item t);
+  function void write_apb_active1(apb_sequence_item t);
     apb_cov_item = t;
     apb_cg.sample();
   endfunction
 
-  function void write_apb_passive(apb_seq_item t);
+  function void write_apb_passive1(apb_sequence_item t);
     apb_cov_item = t;
     apb_cg.sample();
   endfunction
 
-  function void write_can_active(can_sequence_item t);
+  function void write_can_active1(can_sequence_item t);
     can_cov_item = t;
     can_cg.sample();
   endfunction
 
-  function void write_can_passive(can_sequence_item t);
+  function void write_can_passive1(can_sequence_item t);
     can_cov_item = t;
     can_cg.sample();
   endfunction
@@ -184,13 +184,9 @@ class can_subscriber extends uvm_component;
   function void report_phase(uvm_phase phase);
     super.report_phase(phase);
 
-    `uvm_info(get_type_name(),
-      $sformatf("[APB] Functional Coverage = %0.2f%%",
-                apb_item_cov), UVM_MEDIUM)
+    `uvm_info(get_type_name(),   $sformatf("[APB] Functional Coverage = %0.2f%%",  apb_item_cov), UVM_MEDIUM)
 
-    `uvm_info(get_type_name(),
-      $sformatf("[CAN] Functional Coverage = %0.2f%%",
-                can_item_cov), UVM_MEDIUM)
+    `uvm_info(get_type_name(),  $sformatf("[CAN] Functional Coverage = %0.2f%%",can_item_cov), UVM_MEDIUM)
   endfunction
 
 endclass

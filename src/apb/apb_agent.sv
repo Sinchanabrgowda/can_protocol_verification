@@ -1,7 +1,7 @@
 class apb_agent extends uvm_agent;
   `uvm_component_utils(apb_agent)
 
-  uvm_sequencer #(apb_seq_item) sequencer;
+  uvm_sequencer #(apb_sequence_item) sequencer;
   apb_driver driver;
   apb_active_monitor active_monitor;
   apb_passive_monitor passive_monitor;
@@ -16,7 +16,7 @@ class apb_agent extends uvm_agent;
     assert(uvm_config_db#(uvm_active_passive_enum)::get(this, "", "is_active", is_active));
 
     if (get_is_active() == UVM_ACTIVE) begin
-      sequencer = uvm_sequencer#(apb_seq_item)::type_id::create("sequencer", this);
+      sequencer = uvm_sequencer#(apb_sequence_item)::type_id::create("sequencer", this);
       driver = apb_driver::type_id::create("driver", this);
       active_monitor = apb_active_monitor::type_id::create("active_monitor", this);
     end

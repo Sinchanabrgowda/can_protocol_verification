@@ -17,36 +17,33 @@ class can_driver extends uvm_driver #(can_sequence_item);
   bit tx_stuffed_bits[$];
   bit tx_arbitration_flags[$];
 
-  function new(
-    string name = "can_driver",
-    uvm_component parent = null
-  );
+  function new(string name = "can_driver", uvm_component parent = null );
     super.new(name, parent);
   endfunction
 
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
 
-    if (!uvm_config_db#(virtual can_interface)::get(
-          this, "", "vif", vif))
+    if (!uvm_config_db#(virtual can_interface)::get( this, "", "vif", vif))
       `uvm_fatal("CAN_DRV", "CAN interface not found")
 
-    if (!uvm_config_db#(can_timing_config)::get(
-          this, "", "timing_cfg", timing_cfg))
+    if (!uvm_config_db#(can_timing_config)::get(  this, "", "timing_cfg", timing_cfg))
       `uvm_fatal("CAN_DRV", "CAN timing configuration not found")
   endfunction
 
+//task for waiting for n number of cycles as per bitrate given
   task wait_clocks(int unsigned count);
     repeat (count)
       @(posedge vif.can_clk);
   endtask
 
+//task for sampling the bits from the bus
   task sample_next_raw_bit(output bit value);
-    if (rx_replay_bits.size() != 0) begin
+    if (rx_replay_bits.size() != 0) begin    //if arbitration lost
       value = rx_replay_bits.pop_front();
     end
     else begin
-      if (rx_first_live_after_replay) begin
+      if (rx_first_live_after_replay) begin   //reciving the raw bit from sample after the replay of arbitr bits
         wait_clocks(timing_cfg.sample_point_cycles);
         rx_first_live_after_replay = 1'b0;
       end
@@ -60,7 +57,7 @@ class can_driver extends uvm_driver #(can_sequence_item);
   task wait_for_sof(output bit sof);
     sof = 1'b1;
 
-    wait (vif.can_bus === 1'b1);
+    wait (vif.can_bus === 1'b1);   //bus idle
     @(negedge vif.can_bus);
 
     wait_clocks(timing_cfg.sample_point_cycles);
@@ -101,11 +98,7 @@ class can_driver extends uvm_driver #(can_sequence_item);
 endtask
     
 
-  task read_rx_field(
-    input int unsigned width,
-    output longint unsigned value,
-    input bit include_in_crc
-  );
+  task read_rx_field( input int unsigned width,output longint unsigned value, input bit include_in_crc);
     bit sampled_bit;
 
     value = 0;
@@ -152,10 +145,7 @@ endtask
   endfunction
 
   task drive_ack_slot();
-    wait_clocks(
-      timing_cfg.clocks_per_bit -
-      timing_cfg.sample_point_cycles
-    );
+    wait_clocks( timing_cfg.clocks_per_bit - timing_cfg.sample_point_cycles );
 
     @(negedge vif.can_clk);
     vif.ext_tx = 1'b0;  //ack
@@ -198,55 +188,27 @@ endtask
       sample_next_raw_bit(sampled_bit);  //error_flag bits
 
       if (sampled_bit !== 1'b0)
-        `uvm_error(
-          "CAN_DRV",
-          $sformatf(
-            "Expected dominant error-flag bit %0d, sampled %0b",
-            i,
-            sampled_bit
-          )
-        )
+        `uvm_error( "CAN_DRV", $sformatf( "Expected dominant error-flag bit %0d, sampled %0b", i,sampled_bit ) )
     end
 
     for (int unsigned i = 0; i < 8; i++) begin
       sample_next_raw_bit(sampled_bit);  //error_delim
 
       if (sampled_bit !== 1'b1)
-        `uvm_error(
-          "CAN_DRV",
-          $sformatf(
-            "Expected recessive error-delimiter bit %0d, sampled %0b",
-            i,
-            sampled_bit
-          )
-        )
+        `uvm_error( "CAN_DRV", $sformatf( "Expected recessive error-delimiter bit %0d, sampled %0b",i,sampled_bit ) )
     end
 
     for (int unsigned i = 0; i < 3; i++) begin
       sample_next_raw_bit(sampled_bit); //error ifs
 
       if (sampled_bit !== 1'b1)
-        `uvm_error(
-          "CAN_DRV",
-          $sformatf(
-            "Expected recessive intermission bit %0d, sampled %0b",
-            i,
-            sampled_bit
-          )
-        )
+        `uvm_error( "CAN_DRV", $sformatf(  "Expected recessive intermission bit %0d, sampled %0b", i, sampled_bit ) )
     end
 
-    `uvm_info(
-      "CAN_DRV",
-      "DUT error flag, error delimiter and intermission checked",
-      UVM_MEDIUM
-    )
+    `uvm_info( "CAN_DRV", "DUT error flag, error delimiter and intermission checked", UVM_MEDIUM )
   endtask
 
-  task decode_frame_from_sof(
-    can_sequence_item req,
-    input bit sof
-  );
+  task decode_frame_from_sof(  can_sequence_item req,input bit sof );
     bit sampled_bit;
     bit first_after_base;
     bit received_ide;
@@ -325,10 +287,7 @@ endtask
 
     if (received_dlc > 8) begin
       frame_valid = 0;
-      `uvm_error(
-        "CAN_DRV",
-        $sformatf("Unsupported DLC value: %0d", received_dlc)
-      )
+      `uvm_error(   "CAN_DRV", $sformatf("Unsupported DLC value: %0d", received_dlc) )
     end
 
     payload_bytes = (received_dlc > 8) ? 8 : received_dlc;
@@ -353,21 +312,10 @@ endtask
     if (received_crc !== expected_crc) begin
       frame_valid = 0;
 
-      `uvm_error(
-        "CAN_DRV",
-        $sformatf(
-          "CRC mismatch: received=0x%04h expected=0x%04h",
-          received_crc,
-          expected_crc
-        )
-      )
+      `uvm_error( "CAN_DRV", $sformatf( "CRC mismatch: received=0x%04h expected=0x%04h",received_crc,  expected_crc ) )
     end
     else begin
-      `uvm_info(
-        "CAN_DRV",
-        $sformatf("CRC matched: 0x%04h", received_crc),
-        UVM_MEDIUM
-      )
+      `uvm_info(  "CAN_DRV", $sformatf("CRC matched: 0x%04h", received_crc), UVM_MEDIUM )
     end
  
       sample_next_raw_bit(sampled_bit);  //crc delim
@@ -381,26 +329,14 @@ endtask
       drive_ack_slot();  //go to ack drive if recived properly
 
       `uvm_info(
-        "CAN_DRV",
-        $sformatf(
-          "ACK sent: IDE=%0b RTR=%0b ID_BASE=0x%03h DLC=%0d",
-          req.ide,
-          req.rtr,
-          req.id_base,
-          req.dlc
-        ),
-        UVM_MEDIUM
-      )
+        "CAN_DRV", $sformatf( "ACK sent: IDE=%0b RTR=%0b ID_BASE=0x%03h DLC=%0d",   req.ide, req.rtr, req.id_base, req.dlc ), UVM_MEDIUM )
 
       check_ack_delimiter_and_eof();  //if ack go to this
     end
     else begin
       vif.ext_tx = 1'b1;
 
-      `uvm_warning(
-        "CAN_DRV",
-        "Frame not acknowledged: checking DUT error response"
-      )
+      `uvm_warning( "CAN_DRV", "Frame not acknowledged: checking DUT error response" )
 
       check_error_flag_and_delimiter(); //if err go to this
     end
@@ -431,10 +367,7 @@ endtask
     bit sof;
 
     if (rx_replay_bits.size() == 0) begin
-      `uvm_error(
-        "CAN_DRV",
-        "No buffered bus bits available after arbitration loss"
-      )
+      `uvm_error( "CAN_DRV", "No buffered bus bits available after arbitration loss" )
       return;
     end
 
@@ -448,10 +381,7 @@ endtask
     sof = rx_replay_bits.pop_front();
 
     if (sof !== 1'b0) begin
-      `uvm_error(
-        "CAN_DRV",
-        "Buffered frame does not start with a dominant SOF"
-      )
+      `uvm_error( "CAN_DRV",   "Buffered frame does not start with a dominant SOF" )
       rx_replay_bits.delete();
       rx_first_live_after_replay = 1'b0;
       vif.ext_tx = 1'b1;
@@ -463,11 +393,7 @@ endtask
     vif.ext_tx = 1'b1;
     rx_first_live_after_replay = 1'b1;
 
-    `uvm_info(
-      "CAN_DRV",
-      "Arbitration lost; reconstructing the sampled prefix and continuing at the next live bit",
-      UVM_MEDIUM
-    )
+    `uvm_info( "CAN_DRV",  "Arbitration lost; reconstructing the sampled  and continuing  next raw bit",  UVM_MEDIUM )
 
     decode_frame_from_sof(req, sof);
 
@@ -475,11 +401,7 @@ endtask
     rx_first_live_after_replay = 1'b0;
   endtask
 
-  function void append_bits(
-    ref bit bits[$],
-    input longint unsigned value,
-    input int unsigned width
-  );
+  function void append_bits( ref bit bits[$], input longint unsigned value, input int unsigned width );
     for (int i = width - 1; i >= 0; i--)
       bits.push_back(value[i]);
   endfunction
@@ -585,11 +507,7 @@ endtask
     end
   endfunction
 
-  task drive_one_bit(
-    input bit value,
-    input bit check_arbitration,
-    output bit arbitration_lost
-  );
+  task drive_one_bit( input bit value,input bit check_arbitration, output bit arbitration_lost );
     bit sampled_bus;
 
     arbitration_lost = 0; 
@@ -604,19 +522,12 @@ endtask
       arbitration_lost = 1;
       vif.ext_tx = 1'b1;
 
-      `uvm_info(
-        "CAN_DRV",
-        "Sent recessive bit but sampled dominant bit; arbitration lost; releasing the bus for the rest of this bit period",
-        UVM_MEDIUM
-      )
+      `uvm_info( "CAN_DRV", "Sent recessive bit but sampled dominant bit; arbitration lost; releasing the bus for the rest of this bit period", UVM_MEDIUM )
     end
 
     // Even after losing arbitration, finish the current bit period before
     // attempting to receive the next bit from the winning node.
-    wait_clocks(
-      timing_cfg.clocks_per_bit -
-      timing_cfg.sample_point_cycles
-    );
+    wait_clocks( timing_cfg.clocks_per_bit - timing_cfg.sample_point_cycles );
 
     @(negedge vif.can_clk);
   endtask
@@ -637,10 +548,7 @@ endtask
 
     ack_received = (sampled_bit === 1'b0); //ack
 
-    wait_clocks(
-      timing_cfg.clocks_per_bit -
-      timing_cfg.sample_point_cycles
-    );
+    wait_clocks( timing_cfg.clocks_per_bit -  timing_cfg.sample_point_cycles );
 
     if (!ack_received)
       `uvm_error("CAN_DRV", "No ACK received from DUT")
@@ -668,10 +576,7 @@ endtask
     end
 
     if (!req.rtr && req.data.size() < req.dlc) begin
-      `uvm_error(
-        "CAN_DRV",
-        "Payload array size is smaller than DLC"
-      )
+      `uvm_error( "CAN_DRV", "Payload array size is smaller than DLC" )
       return;
     end
 
@@ -679,26 +584,12 @@ endtask
     rx_replay_bits.delete();
     rx_first_live_after_replay = 1'b0;
 
-    `uvm_info(
-      "CAN_DRV",
-      $sformatf(
-        "Starting CAN frame: IDE=%0b RTR=%0b ID_BASE=0x%03h DLC=%0d",
-        req.ide,
-        req.rtr,
-        req.id_base,
-        req.dlc
-      ),
-      UVM_MEDIUM
-    )
+    `uvm_info("CAN_DRV",  $sformatf(  "Starting CAN frame: IDE=%0b RTR=%0b ID_BASE=0x%03h DLC=%0d", req.ide,  req.rtr, req.id_base,req.dlc ),UVM_MEDIUM )
 
     @(negedge vif.can_clk);
 
     foreach (tx_stuffed_bits[i]) begin
-      drive_one_bit(
-        tx_stuffed_bits[i],
-        tx_arbitration_flags[i],
-        arbitration_lost
-      );
+      drive_one_bit(  tx_stuffed_bits[i], tx_arbitration_flags[i], arbitration_lost );
 
       if (arbitration_lost) begin
         receive_after_arbitration_loss(req);
@@ -722,10 +613,7 @@ endtask
     if (ack_received)
       `uvm_info("CAN_DRV", "Frame transmitted through EOF", UVM_MEDIUM)
     else
-      `uvm_warning(
-        "CAN_DRV",
-        "Frame transmission reached EOF without ACK"
-      )
+      `uvm_warning(  "CAN_DRV",  "Frame transmission reached EOF without ACK" )
   endtask
 
   task run_phase(uvm_phase phase);
@@ -735,6 +623,7 @@ endtask
 
     forever begin
       seq_item_port.get_next_item(req);
+`uvm_info("CAN_DRV", "Received CAN sequence item", UVM_LOW)
 
       case (req.operation)
         ACK_DUT_FRAME:
@@ -744,10 +633,7 @@ endtask
           drive_frame(req);
 
         default:
-          `uvm_error(
-            "CAN_DRV",
-            "Unsupported CAN driver operation"
-          )
+          `uvm_error(  "CAN_DRV",  "Unsupported CAN driver operation"  )
       endcase
 
       seq_item_port.item_done();

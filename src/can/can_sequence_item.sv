@@ -1,7 +1,4 @@
-typedef enum bit {
-  DRIVE_FRAME,
-  ACK_DUT_FRAME
-} can_operation_e;
+typedef enum bit {DRIVE_FRAME, ACK_DUT_FRAME} can_operation_e;
 
 
 class can_sequence_item extends uvm_sequence_item;
@@ -15,6 +12,7 @@ class can_sequence_item extends uvm_sequence_item;
   rand bit [3:0] dlc;
   rand bit [7:0] data[];
 
+  bit [14:0] crc;
   bit crc_error;
   bit ack_error;
   bit bit_error;
@@ -28,6 +26,8 @@ class can_sequence_item extends uvm_sequence_item;
     `uvm_field_int(id_base, UVM_ALL_ON)
     `uvm_field_int(id_ext, UVM_ALL_ON)
     `uvm_field_int(dlc, UVM_ALL_ON)
+    `uvm_field_int(crc, UVM_ALL_ON)
+
     `uvm_field_array_int(data, UVM_ALL_ON)
     `uvm_field_int(crc_error, UVM_ALL_ON)
     `uvm_field_int(ack_error, UVM_ALL_ON)

@@ -6,12 +6,11 @@ class can_passive_monitor extends uvm_monitor;
 
   uvm_analysis_port #(can_sequence_item) analysis_port;
 
-  bit previous_bit;  //// to remove stuff bits
-  int unsigned same_count; //to remove stuff bits
+  bit previous_bit;
+  int unsigned same_count;
   bit frame_valid;
 
-  function new(string name = "can_passive_monitor",
-               uvm_component parent = null);
+  function new(string name = "can_passive_monitor", uvm_component parent = null);
     super.new(name, parent);
     analysis_port = new("analysis_port", this);
   endfunction
@@ -19,12 +18,10 @@ class can_passive_monitor extends uvm_monitor;
   function void build_phase(uvm_phase phase);
     super.build_phase(phase);
 
-    if (!uvm_config_db#(virtual can_interface)::get(
-          this, "", "vif", vif))
+    if (!uvm_config_db#(virtual can_interface)::get( this, "", "vif", vif))
       `uvm_fatal("CAN_PASS_MON", "CAN interface not found")
 
-    if (!uvm_config_db#(can_timing_config)::get(
-          this, "", "timing_cfg", timing_cfg))
+    if (!uvm_config_db#(can_timing_config)::get( this, "", "timing_cfg", timing_cfg))
       `uvm_fatal("CAN_PASS_MON", "CAN timing configuration not found")
   endfunction
 
@@ -53,7 +50,7 @@ class can_passive_monitor extends uvm_monitor;
     value = vif.can_bus;
   endtask
 
-  task sample_destuffed_bit(output bit value);
+  task sample_destuffed_bit( output bit value,input can_sequence_item tr );
     bit stuff_bit;
 
     if (same_count == 5) begin
@@ -61,6 +58,7 @@ class can_passive_monitor extends uvm_monitor;
 
       if (stuff_bit === previous_bit) begin
         frame_valid = 0;
+        tr.stuff_error = 1;
         `uvm_error("CAN_PASS_MON", "CAN stuffing error detected")
       end
 
@@ -78,16 +76,13 @@ class can_passive_monitor extends uvm_monitor;
     end
   endtask
 
-  task read_field(
-    input int unsigned width,
-    output longint unsigned value
-  );
+  task read_field(   input int unsigned width,   output longint unsigned value, input can_sequence_item tr );
     bit sampled_bit;
 
     value = 0;
 
     for (int unsigned i = 0; i < width; i++) begin
-      sample_destuffed_bit(sampled_bit);
+      sample_destuffed_bit(sampled_bit, tr);
       value = (value << 1) | sampled_bit;
     end
   endtask
@@ -110,73 +105,98 @@ class can_passive_monitor extends uvm_monitor;
     previous_bit = 0;
     same_count = 1;
 
+    // Initialize error flags
+    tr.crc_error = 0;
+    tr.ack_error = 0;
+    tr.bit_error = 0;
+    tr.stuff_error = 0;
+    tr.form_error = 0;
+
     wait_for_sof(sof);
 
-    if (sof !== 1'b0)
+    if (sof !== 1'b0) begin
+      tr.form_error = 1;
+      analysis_port.write(tr);
       return;
+    end
 
     previous_bit = sof;
     same_count = 1;
 
-    read_field(11, field_value);
+    // Identifier base
+    read_field(11, field_value, tr);
     tr.id_base = field_value[10:0];
 
-    sample_destuffed_bit(first_after_base);
-    sample_destuffed_bit(received_ide);
+    // SRR/RTR and IDE
+    sample_destuffed_bit(first_after_base, tr);
+    sample_destuffed_bit(received_ide, tr);
 
     tr.ide = received_ide;
 
     if (received_ide) begin
+
+      // Extended frame
       if (first_after_base !== 1'b1) begin
         frame_valid = 0;
+        tr.form_error = 1;
         `uvm_error("CAN_PASS_MON", "Invalid SRR bit")
       end
 
-      read_field(18, field_value);
+      read_field(18, field_value, tr);
       tr.id_ext = field_value[17:0];
 
-      read_field(1, field_value);
+      read_field(1, field_value, tr);
       received_rtr = field_value[0];
 
-      read_field(1, field_value);
+      // Reserved bit r1
+      read_field(1, field_value, tr);
       if (field_value[0] !== 1'b0) begin
         frame_valid = 0;
+        tr.form_error = 1;
         `uvm_error("CAN_PASS_MON", "Invalid r1 bit")
       end
 
-      read_field(1, field_value);
+      // Reserved bit r0
+      read_field(1, field_value, tr);
       if (field_value[0] !== 1'b0) begin
         frame_valid = 0;
+        tr.form_error = 1;
         `uvm_error("CAN_PASS_MON", "Invalid r0 bit")
       end
     end
     else begin
+
+      // Standard frame
       received_rtr = first_after_base;
 
-      read_field(1, field_value);
+      read_field(1, field_value, tr);
       if (field_value[0] !== 1'b0) begin
         frame_valid = 0;
+        tr.form_error = 1;
         `uvm_error("CAN_PASS_MON", "Invalid standard r0 bit")
       end
     end
 
     tr.rtr = received_rtr;
 
-    read_field(4, field_value);
+    // DLC
+    read_field(4, field_value, tr);
     tr.dlc = field_value[3:0];
 
     if (tr.dlc > 8) begin
       frame_valid = 0;
+      tr.form_error = 1;
       `uvm_error("CAN_PASS_MON", "Invalid DLC")
     end
 
     payload_bytes = (tr.dlc > 8) ? 8 : tr.dlc;
 
+    // Data field
     if (!tr.rtr) begin
       tr.data = new[payload_bytes];
 
       for (int unsigned i = 0; i < payload_bytes; i++) begin
-        read_field(8, field_value);
+        read_field(8, field_value, tr);
         tr.data[i] = field_value[7:0];
       end
     end
@@ -184,53 +204,49 @@ class can_passive_monitor extends uvm_monitor;
       tr.data = new[0];
     end
 
-    read_field(15, field_value);
+    // Received CRC
+    read_field(15, field_value, tr);
+    tr.crc = field_value[14:0];
 
+    // CRC delimiter
     sample_raw_bit(sampled_bit);
     if (sampled_bit !== 1'b1) begin
       frame_valid = 0;
+      tr.form_error = 1;
       `uvm_error("CAN_PASS_MON", "Invalid CRC delimiter")
     end
 
+    // ACK slot
     sample_raw_bit(sampled_bit);
     if (sampled_bit !== 1'b0) begin
       frame_valid = 0;
+      tr.ack_error = 1;
       `uvm_error("CAN_PASS_MON", "ACK slot is not dominant")
     end
 
+    // ACK delimiter
     sample_raw_bit(sampled_bit);
     if (sampled_bit !== 1'b1) begin
       frame_valid = 0;
+      tr.form_error = 1;
       `uvm_error("CAN_PASS_MON", "Invalid ACK delimiter")
     end
 
+    // EOF
     for (int unsigned i = 0; i < 7; i++) begin
       sample_raw_bit(sampled_bit);
 
       if (sampled_bit !== 1'b1) begin
         frame_valid = 0;
+        tr.form_error = 1;
         `uvm_error("CAN_PASS_MON", "Invalid EOF bit")
       end
     end
 
-    if (frame_valid) begin
-      `uvm_info(
-        "CAN_PASS_MON",
-        $sformatf(
-          "Frame observed: IDE=%0b ID_BASE=0x%03h ID_EXT=0x%05h RTR=%0b DLC=%0d",
-          tr.ide, tr.id_base, tr.id_ext, tr.rtr, tr.dlc
-        ),
-        UVM_MEDIUM
-      )
+    `uvm_info( "CAN_PASS_MON",   $sformatf( "Frame observed: IDE=%0b ID_BASE=0x%03h ID_EXT=0x%05h RTR=%0b DLC=%0d CRC=0x%04h",  tr.ide, tr.id_base, tr.id_ext, tr.rtr, tr.dlc, tr.crc  ), UVM_MEDIUM )
 
-      analysis_port.write(tr);
-    end
-    else begin
-      `uvm_warning(
-        "CAN_PASS_MON",
-        "Invalid frame observed; transaction not published"
-      )
-    end
+    analysis_port.write(tr);
+
   endtask
 
   task run_phase(uvm_phase phase);
