@@ -10,19 +10,29 @@ class can_frame_dut_ack_virtual_seq_test extends uvm_test;
   endfunction
 
   function void build_phase(uvm_phase phase);
-    super.build_phase(phase);
-    can_e = can_env::type_id::create("can_e", this);
-  endfunction
+ super.build_phase(phase);
+  uvm_config_db#(can_operation_e)::set(
+  this, "can_e", "operation", ACK_DUT_FRAME
+);
 
-  task run_phase(uvm_phase phase);
+ can_e = can_env::type_id::create("can_e", this);
+ endfunction
+
+
+ task run_phase(uvm_phase phase);
+
     super.run_phase(phase);
 
     phase.raise_objection(this);
 
+`uvm_info("TEST", "Starting virtual sequence", UVM_LOW)
     v_seq = can_frame_dut_ack_virtual_seq::type_id::create("v_seq");
     v_seq.start(can_e.virtual_seqr);
 
     phase.drop_objection(this);
   endtask
 
+
 endclass
+
+

@@ -23,7 +23,7 @@ fell.log +incdir+apb +incdir+can +incdir+apb/can_ral_sequence can/can_top.sv
 -fsdb -sverilog -gen_obj +incdir+apb +incdir+can +incdir+apb/can_ral_sequence can/can_top.sv \
 
                          Chronologic VCS (TM)
-      Version Q-2020.03-SP2-8_Full64 -- Fri Nov 13 14:58:36 2026
+      Version Q-2020.03-SP2-8_Full64 -- Fri Nov 13 17:09:48 2026
                Copyright (c) 1991-2020 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -443,6 +443,8 @@ Back to file 'can/can_top.sv'.
 Parsing included file 'can/can_pkg.sv'.
 Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
 Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_defines.sv'.
+Back to file 'can/can_pkg.sv'.
 Parsing included file 'can/can_timing_config.sv'.
 Back to file 'can/can_pkg.sv'.
 Parsing included file 'can/can_sequence_item.sv'.
@@ -484,9 +486,13 @@ No TimeScale specified
 Starting vcs inline pass...
 
 16 modules and 0 UDP read.
+recompiling package vcs_paramclassrepository
+recompiling package uvm_pkg
+recompiling module uvm_custom_install_verdi_recording
 recompiling package can_pkg
-	However, due to incremental compilation, only 1 module needs to be compiled. 
-( cd csrc ; make -f Makefile SNPS_VCS_TMPDIR=/tmp/vcs_20261113092835_116872 product \
+4 of 16 modules done
+	However, due to incremental compilation, only 4 modules need to be compiled. 
+( cd csrc ; make -f Makefile SNPS_VCS_TMPDIR=/tmp/vcs_20261113113948_159629 product \
 )
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
@@ -495,7 +501,7 @@ if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib \
 -L/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib  -Wl,-rpath-link=./ \
-/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _117318_archive_1.so _prev_archive_1.so \
+/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _160095_archive_1.so _prev_archive_1.so \
 _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o \
 rmar_llvm_0_0.o          -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile \
 -luclinative /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_tls.o \
@@ -508,9 +514,9 @@ Running simv -V +v2k -a fell.log
 Command: /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/./simv -V +v2k -a fell.log
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Nov 13 14:58 2026
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Nov 13 17:10 2026
 VCS Build Date = Sep 11 2021 20:22:52
-Start run at Nov 13 14:58 2026
+Start run at Nov 13 17:10 2026
 
 UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
 ----------------------------------------------------------------
@@ -536,12 +542,16 @@ UVM-1.2.Synopsys
 
 UVM_INFO @ 0: reporter [RNTST] Running test can_frame_dut_ack_virtual_seq_test...
 UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean is_active|timing_cfg
+UVM_INFO can/can_active_monitor.sv(290) @ 0: uvm_test_top.can_e.can_agt.active_monitor [CAN_MON] Active monitor disabled for ACK_DUT_FRAME
+UVM_INFO can/can_passive_monitor.sv(276) @ 0: uvm_test_top.can_e.can_agt.passive_monitor [CAN_PASS_MON] Passive monitor run_phase started
+UVM_INFO can/can_test/can_frame_dut_ack_virtual_seq_test.sv(28) @ 0: uvm_test_top [TEST] Starting virtual sequence
 UVM_INFO can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv(20) @ 0: uvm_test_top.can_e.virtual_seqr@@v_seq [VSEQ] Starting CAN ACK sequence
 UVM_INFO can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv(34) @ 0: uvm_test_top.can_e.virtual_seqr@@v_seq [VSEQ] Starting APB RAL sequence
 UVM_INFO can/can_sequences/can_ack_dut_frame.sv(11) @ 0: uvm_test_top.can_e.can_agt.sequencer@@can_seq [CAN_ACK_SEQ] Creating ACK request
 UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(49) @ 0: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Disabling CAN controller
 UVM_INFO can/can_sequences/can_ack_dut_frame.sv(15) @ 0: uvm_test_top.can_e.can_agt.sequencer@@can_seq [CAN_ACK_SEQ] Got grant from CAN sequencer
-UVM_INFO can/can_driver.sv(626) @ 0: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Received CAN sequence item
+UVM_INFO can/can_driver.sv(665) @ 0: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Received CAN sequence item
+UVM_INFO can/can_driver.sv(392) @ 0: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Waiting for DUT SOF
 UVM_INFO apb/apb_driver.sv(31) @ 0: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
 UVM_INFO apb/apb_driver.sv(33) @ 25: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
 UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(53) @ 25: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Configuring BRPR
@@ -569,6 +579,7 @@ UVM_INFO apb/apb_driver.sv(31) @ 235: uvm_test_top.can_e.apb_agt.driver [APB_DRV
 UVM_INFO apb/apb_driver.sv(33) @ 265: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
 UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(80) @ 265: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Pushing frame into TX FIFO
 UVM_INFO apb/apb_driver.sv(31) @ 265: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO can/can_scoreboard.sv(285) @ 295: uvm_test_top.can_e.can_scb [CAN_SB] Expected DUT TX frame queued: IDE=0 ID_BASE=000 ID_EXT=00000 RTR=0 DLC=4
 UVM_INFO apb/apb_driver.sv(33) @ 295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
 UVM_INFO apb/apb_driver.sv(31) @ 295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
 UVM_INFO apb/apb_driver.sv(33) @ 325: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
@@ -580,8 +591,87 @@ UVM_INFO apb/apb_driver.sv(31) @ 355: uvm_test_top.can_e.apb_agt.driver [APB_DRV
 UVM_INFO apb/apb_driver.sv(33) @ 385: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
 UVM_INFO apb/can_ral_sequence/can_tx_basic_seq.sv(93) @ 385: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq [CAN_TX_SEQ] Error Counter = 00000000
 UVM_INFO can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv(36) @ 385: uvm_test_top.can_e.virtual_seqr@@v_seq [VSEQ] APB RAL sequence completed
-UVM_FATAL /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_phase.svh(1495) @ 9200: reporter [PH_TIMEOUT] Default timeout of 9200 hit, indicating a probable testbench issue
-UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 9200: reporter [UVM/REPORT/CATCHER] 
+UVM_INFO can/can_driver.sv(395) @ 1825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] SOF detected, value = 0
+UVM_INFO can/can_driver.sv(401) @ 1825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Decoding DUT frame
+UVM_INFO can/can_driver.sv(234) @ 1825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Reading base ID
+UVM_INFO can/can_driver.sv(237) @ 27825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Base ID received
+UVM_INFO can/can_driver.sv(239) @ 27825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Reading SRR/RTR
+UVM_INFO can/can_driver.sv(241) @ 29825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] SRR/RTR received
+UVM_INFO can/can_driver.sv(245) @ 29825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Reading IDE
+UVM_INFO can/can_driver.sv(247) @ 31825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] IDE received
+UVM_INFO can/can_driver.sv(291) @ 33825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Frame fields: ID_BASE=0x000 IDE=0 RTR=0 ID_EXT=0x00000
+UVM_INFO can/can_driver.sv(299) @ 43825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Received DLC = 4
+UVM_INFO can/can_driver.sv(321) @ 107825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] ----- Decoded CAN Frame -----
+UVM_INFO can/can_driver.sv(323) @ 107825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] ID_BASE=0x000 IDE=0 RTR=0 DLC=4
+UVM_INFO can/can_driver.sv(328) @ 107825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Data[0] = 0xdd
+UVM_INFO can/can_driver.sv(328) @ 107825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Data[1] = 0xcc
+UVM_INFO can/can_driver.sv(328) @ 107825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Data[2] = 0xbb
+UVM_INFO can/can_driver.sv(328) @ 107825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] Data[3] = 0xaa
+UVM_INFO can/can_driver.sv(332) @ 107825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] -----------------------------
+UVM_INFO can/can_driver.sv(337) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] CRC input bits count = 51
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[0] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[1] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[2] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[3] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[4] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[5] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[6] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[7] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[8] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[9] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[10] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[11] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[12] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[13] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[14] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[15] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[16] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[17] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[18] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[19] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[20] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[21] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[22] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[23] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[24] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[25] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[26] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[27] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[28] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[29] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[30] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[31] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[32] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[33] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[34] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[35] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[36] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[37] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[38] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[39] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[40] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[41] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[42] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[43] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[44] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[45] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[46] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[47] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[48] = 0
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[49] = 1
+UVM_INFO can/can_driver.sv(341) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] crc_bits[50] = 0
+UVM_INFO can/can_driver.sv(353) @ 137825: uvm_test_top.can_e.can_agt.driver [CAN_DRV] CRC matched: 0x4cac
+UVM_INFO can/can_driver.sv(366) @ 142450: uvm_test_top.can_e.can_agt.driver [CAN_DRV] ACK sent: IDE=0 RTR=0 ID_BASE=0x000 DLC=4
+UVM_INFO can/can_passive_monitor.sv(269) @ 157825: uvm_test_top.can_e.can_agt.passive_monitor [CAN_PASS_MON] Frame observed: IDE=0 ID_BASE=0x000 ID_EXT=0x00000 RTR=0 DLC=4 CRC=0x4cac
+UVM_INFO can/can_scoreboard.sv(547) @ 157825: uvm_test_top.can_e.can_scb [CAN_SB] DUT_TX frame matched successfully
+UVM_INFO can/can_sequences/can_ack_dut_frame.sv(18) @ 164425: uvm_test_top.can_e.can_agt.sequencer@@can_seq [CAN_ACK_SEQ] ACK request completed
+UVM_INFO can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv(30) @ 164425: uvm_test_top.can_e.virtual_seqr@@v_seq [VSEQ] CAN ACK sequence completed
+UVM_INFO can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv(40) @ 164425: uvm_test_top.can_e.virtual_seqr@@v_seq [VSEQ] Virtual sequence completed
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 164425: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO can/can_scoreboard.sv(561) @ 164425: uvm_test_top.can_e.can_scb [CAN_SB] Scoreboard summary: PASS=1 ERROR=0 Expected TX frames remaining=0 Expected RX frames remaining=0
+UVM_INFO can/can_subscriber.sv(187) @ 164425: uvm_test_top.can_e.can_subscrb [can_subscriber] [APB] Functional Coverage = 61.48%
+UVM_INFO can/can_subscriber.sv(189) @ 164425: uvm_test_top.can_e.can_subscrb [can_subscriber] [CAN] Functional Coverage = 41.07%
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 164425: reporter [UVM/REPORT/CATCHER] 
 --- UVM Report catcher Summary ---
 
 
@@ -592,30 +682,165 @@ Number of caught UVM_FATAL reports   :    0
 Number of caught UVM_ERROR reports   :    0
 Number of caught UVM_WARNING reports :    0
 
-UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_server.svh(894) @ 9200: reporter [UVM/REPORT/SERVER] 
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_server.svh(894) @ 164425: reporter [UVM/REPORT/SERVER] 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :   48
+UVM_INFO :  133
 UVM_WARNING :    0
 UVM_ERROR :    0
-UVM_FATAL :    1
+UVM_FATAL :    0
 ** Report counts by id
 [APB_DRV]    26
-[CAN_ACK_SEQ]     2
-[CAN_DRV]     1
+[CAN_ACK_SEQ]     3
+[CAN_DRV]    73
+[CAN_MON]     1
+[CAN_PASS_MON]     2
+[CAN_SB]     3
 [CAN_TX_SEQ]    12
-[PH_TIMEOUT]     1
 [RNTST]     1
+[TEST]     1
+[TEST_DONE]     1
 [UVM/CONFIGDB/SPELLCHK]     1
 [UVM/RELNOTES]     1
 [UVM/REPORT/CATCHER]     1
-[VSEQ]     3
+[VSEQ]     5
+[can_subscriber]     2
 
-$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh", line 135.
-$finish at simulation time                 9200
+$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time               164425
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 9200
+Time: 164425
 CPU Time:      0.630 seconds;       Data structure size:   0.7Mb
-Fri Nov 13 14:59:00 2026
-CPU time: 15.871 seconds to compile + .538 seconds to elab + .873 seconds to link + .683 seconds in simulation
+Fri Nov 13 17:10:15 2026
+CPU time: 20.449 seconds to compile + .500 seconds to elab + .838 seconds to link + .678 seconds in simulation
+Received SIGHUP (signal 1), exiting.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0
+CPU Time:     18.430 seconds;       Data structure size:   0.7Mb
+Fri Nov 13 17:11:08 2026
+Received SIGHUP (signal 1), exiting.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0
+CPU Time:     25.530 seconds;       Data structure size:   0.7Mb
+Fri Nov 13 17:11:08 2026
+Received SIGHUP (signal 1), exiting.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0
+CPU Time:     20.900 seconds;       Data structure size:   0.7Mb
+Fri Nov 13 17:11:08 2026
+Command: /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/./simv -V +v2k -a fell.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Nov 13 16:56 2026
+VCS Build Date = Sep 11 2021 20:22:52
+Start run at Nov 13 16:56 2026
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test can_frame_dut_ack_virtual_seq_test...
+UVM_INFO can/can_env.sv(25) @ 0: uvm_test_top.can_e [ENV] Entering build_phase
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean is_active|timing_cfg
+UVM_INFO can/can_env.sv(57) @ 0: uvm_test_top.can_e [ENV] Exiting build_phase
+Received SIGHUP (signal 1), exiting.
+Received SIGHUP (signal 1), exiting.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0
+CPU Time:      5.000 seconds;       Data structure size:   0.7Mb
+Fri Nov 13 17:11:08 2026
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0
+CPU Time:     21.670 seconds;       Data structure size:   0.7Mb
+Fri Nov 13 17:11:08 2026
+Command: /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/./simv -V +v2k -a fell.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Nov 13 16:50 2026
+VCS Build Date = Sep 11 2021 20:22:52
+Start run at Nov 13 16:50 2026
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test can_frame_dut_ack_virtual_seq_test...
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean is_active|timing_cfg
+Received SIGHUP (signal 1), exiting.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0
+CPU Time:     86.540 seconds;       Data structure size:   0.7Mb
+Fri Nov 13 17:11:08 2026
+Command: /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/./simv -V +v2k -a fell.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Nov 13 16:54 2026
+VCS Build Date = Sep 11 2021 20:22:52
+Start run at Nov 13 16:54 2026
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test can_frame_dut_ack_virtual_seq_test...
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean is_active|timing_cfg
+Received SIGHUP (signal 1), exiting.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0
+CPU Time:     21.100 seconds;       Data structure size:   0.7Mb
+Fri Nov 13 17:11:08 2026

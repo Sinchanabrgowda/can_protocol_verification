@@ -128,7 +128,7 @@ endtask
       crc_new[3]  = crc[2] ^ fb;
       crc_new[4]  = crc[3] ^ fb;
       crc_new[5]  = crc[4];
-      crc_new[6]  = crc[5] ^ fb;
+      crc_new[6]  = crc[5] ;
       crc_new[7]  = crc[6] ^ fb;
       crc_new[8]  = crc[7] ^ fb;
       crc_new[9]  = crc[8];
@@ -231,13 +231,20 @@ endtask
     rx_previous_bit = sof;  //sof
     rx_same_count = 1;
 
-      read_rx_field(11, field_value, 1);  //base id
+`uvm_info("CAN_DRV", "Reading base ID", UVM_LOW)      
+read_rx_field(11, field_value, 1);  //base id
     req.id_base = field_value[10:0];
+`uvm_info("CAN_DRV", "Base ID received", UVM_LOW)
 
+`uvm_info("CAN_DRV", "Reading SRR/RTR", UVM_LOW)
     get_destuffed_bit(first_after_base);
+`uvm_info("CAN_DRV", "SRR/RTR received", UVM_LOW)
+
     crc_bits.push_back(first_after_base);
 
+`uvm_info("CAN_DRV", "Reading IDE", UVM_LOW)
     get_destuffed_bit(received_ide);
+`uvm_info("CAN_DRV", "IDE received", UVM_LOW)
     crc_bits.push_back(received_ide);
     req.ide = received_ide;   //ide
 
@@ -281,9 +288,16 @@ endtask
 
     req.rtr = received_rtr;   //rtr
 
+`uvm_info("CAN_DRV",
+  $sformatf("Frame fields: ID_BASE=0x%03h IDE=%0b RTR=%0b ID_EXT=0x%05h",
+  req.id_base, req.ide, req.rtr, req.id_ext), UVM_LOW)
+
       read_rx_field(4, field_value, 1);  //dlc
     received_dlc = field_value[3:0];
+
     req.dlc = received_dlc;
+`uvm_info("CAN_DRV",
+  $sformatf("Received DLC = %0d", req.dlc), UVM_LOW)
 
     if (received_dlc > 8) begin
       frame_valid = 0;
@@ -304,8 +318,29 @@ endtask
       req.data = new[0];  //if rtr then no paylaod so 0
     end
 
+`uvm_info("CAN_DRV", "----- Decoded CAN Frame -----", UVM_LOW)
+
+`uvm_info("CAN_DRV",
+  $sformatf("ID_BASE=0x%03h IDE=%0b RTR=%0b DLC=%0d",
+  req.id_base, req.ide, req.rtr, req.dlc), UVM_LOW)
+
+foreach (req.data[i]) begin
+  `uvm_info("CAN_DRV",
+    $sformatf("Data[%0d] = 0x%02h", i, req.data[i]), UVM_LOW)
+end
+
+`uvm_info("CAN_DRV", "-----------------------------", UVM_LOW)
+
       read_rx_field(15, field_value, 0); //crc
     received_crc = field_value[14:0];
+
+`uvm_info("CAN_DRV",
+  $sformatf("CRC input bits count = %0d", crc_bits.size()), UVM_LOW)
+
+foreach (crc_bits[i]) begin
+  `uvm_info("CAN_DRV",
+    $sformatf("crc_bits[%0d] = %0b", i, crc_bits[i]), UVM_LOW)
+end
 
     expected_crc = calculate_crc();
 
@@ -354,12 +389,16 @@ endtask
     rx_same_count = 1;
 
     vif.ext_tx = 1'b1; //release the bus
+    `uvm_info("CAN_DRV", "Waiting for DUT SOF", UVM_LOW)
 
     wait_for_sof(sof); //sof  =0 
+`uvm_info("CAN_DRV",
+            $sformatf("SOF detected, value = %0b", sof),
+            UVM_LOW)
 
     if (sof !== 1'b0)
       return;
-
+`uvm_info("CAN_DRV", "Decoding DUT frame", UVM_LOW)
     decode_frame_from_sof(req, sof);  //recive the frame 
   endtask
 

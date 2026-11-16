@@ -30,7 +30,7 @@ class can_active_monitor extends uvm_monitor;
     repeat (count)
       @(posedge vif.can_clk);
   endtask
-
+/*
   task wait_for_sof(output bit sof);
     sof = 1'b1;
 
@@ -45,6 +45,30 @@ class can_active_monitor extends uvm_monitor;
       `uvm_error("CAN_MON", "Invalid SOF")
     end
   endtask
+*/
+
+task wait_for_sof(output bit sof);
+  sof = 1'b1;
+
+  forever begin
+    wait (vif.can_bus === 1'b1);
+    @(negedge vif.can_bus);
+
+    wait_clocks(timing_cfg.sample_point_cycles);
+
+    if (vif.can_bus === 1'b0) begin
+
+      if (vif.can_tx === 1'b1 && vif.ext_tx === 1'b0) begin
+        sof = 1'b0;
+        return;
+      end
+
+      if (vif.can_tx === 1'b0 && vif.ext_tx === 1'b1) begin
+        `uvm_info("CAN_MON", "DUT initiated frame. Active monitor ignoring it.", UVM_MEDIUM)
+      end
+    end
+  end
+endtask
 
   task sample_raw_bit(output bit value);
     wait_clocks(timing_cfg.clocks_per_bit);
@@ -101,6 +125,7 @@ class can_active_monitor extends uvm_monitor;
 
     int unsigned payload_bytes;
 
+
     tr = can_sequence_item::type_id::create("tr");
 
     frame_valid = 1;
@@ -117,13 +142,13 @@ class can_active_monitor extends uvm_monitor;
     tr.form_error = 0;
 
     wait_for_sof(sof);
-
+/*
     if (sof !== 1'b0) begin
       tr.form_error = 1;
       analysis_port.write(tr);
       return;
     end
-
+*/
     previous_bit = sof;
     same_count = 1;
 
@@ -260,7 +285,13 @@ class can_active_monitor extends uvm_monitor;
   endtask
 
   task run_phase(uvm_phase phase);
-    forever begin
+    
+ if (timing_cfg.operation == ACK_DUT_FRAME) begin
+    `uvm_info("CAN_MON", "Active monitor disabled for ACK_DUT_FRAME", UVM_LOW)
+    return;
+  end
+
+forever begin
       monitor_frame();
     end
   endtask

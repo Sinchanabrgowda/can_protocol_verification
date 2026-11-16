@@ -1,6 +1,8 @@
 class can_timing_config extends uvm_object;
   `uvm_object_utils(can_timing_config)
 
+can_operation_e operation;
+
   int unsigned can_clk_freq; 
   int unsigned target_bitrate;
   int unsigned clocks_per_bit;  //clk cycle required for 1 bit
@@ -9,6 +11,7 @@ class can_timing_config extends uvm_object;
 
   function new(string name = "can_timing_config");
     super.new(name);
+operation = DRIVE_FRAME;
   endfunction
 
   function void configure(int unsigned clk_freq, int unsigned bitrate, int unsigned sample_point = 8500 );

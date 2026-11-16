@@ -99,6 +99,7 @@ initial begin
 
 end
   initial begin
+uvm_top.set_timeout(100us);
     run_test("can_frame_dut_ack_virtual_seq_test");
   end
 

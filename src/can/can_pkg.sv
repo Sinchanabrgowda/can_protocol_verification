@@ -4,7 +4,7 @@ package can_pkg;
   import apb_pkg::*;
 
   `include "uvm_macros.svh"
-
+  `include "can_defines.sv"
   `include "can_timing_config.sv"
   `include "can_sequence_item.sv"
   `include "can_sequencer.sv"

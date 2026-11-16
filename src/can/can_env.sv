@@ -14,6 +14,7 @@ class can_env extends uvm_env;
   can_subscriber can_subscrb;
 
 can_timing_config timing_cfg;
+ can_operation_e operation;
 
   function new(string name = "can_env", uvm_component parent = null);
     super.new(name, parent);
@@ -30,6 +31,14 @@ function void build_phase(uvm_phase phase);
 timing_cfg = can_timing_config::type_id::create("timing_cfg");
 
 timing_cfg.configure(20_000_000, 500_000, 7000);
+
+if (!uvm_config_db#(can_operation_e)::get(
+      this, "", "operation", operation))
+  operation = DRIVE_FRAME;
+
+timing_cfg.operation = operation;
+
+
 uvm_config_db#(can_timing_config)::set(this, "can_agt.*", "timing_cfg", timing_cfg );
 
 
@@ -47,7 +56,7 @@ uvm_config_db#(can_timing_config)::set(this, "can_agt.*", "timing_cfg", timing_c
 endfunction
 
   function void connect_phase(uvm_phase phase);
-    super.connect_phase(phase);
+   super.connect_phase(phase);
 
     virtual_seqr.seqr_apb = apb_agt.sequencer;
     virtual_seqr.seqr_can = can_agt.sequencer;
@@ -72,17 +81,14 @@ else begin
    apb_agt.passive_monitor.analysis_port.connect( can_subscrb.apb_passive_port );
 end
 
- if (can_agt.get_is_active() == UVM_ACTIVE) begin
     can_agt.active_monitor.analysis_port.connect( can_scb.can_active_imp);
    can_agt.active_monitor.analysis_port.connect( can_subscrb.can_active_port );
-end
 
-else begin
     can_agt.passive_monitor.analysis_port.connect( can_scb.can_passive_imp );
     can_agt.passive_monitor.analysis_port.connect( can_subscrb.can_passive_port );
-end
 
 can_regmodel.default_map.set_auto_predict(0);
   endfunction
+
 
 endclass

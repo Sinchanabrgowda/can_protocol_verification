@@ -29,12 +29,17 @@ class can_passive_monitor extends uvm_monitor;
     repeat (count)
       @(posedge vif.can_clk);
   endtask
-
+/*
   task wait_for_sof(output bit sof);
     sof = 1'b1;
 
     wait (vif.can_bus === 1'b1);
     @(negedge vif.can_bus);
+@(negedge vif.can_bus);
+
+`uvm_info("CAN_DIRECTION",
+  $sformatf("can_tx=%0b ext_tx=%0b can_bus=%0b",
+  vif.can_tx, vif.ext_tx, vif.can_bus), UVM_LOW)
 
     wait_clocks(timing_cfg.sample_point_cycles);
     sof = vif.can_bus;
@@ -44,6 +49,24 @@ class can_passive_monitor extends uvm_monitor;
       `uvm_error("CAN_PASS_MON", "Invalid SOF")
     end
   endtask
+*/
+
+task wait_for_sof(output bit sof);
+  sof = 1'b1;
+
+  forever begin
+    wait (vif.can_bus === 1'b1);
+    @(negedge vif.can_bus);
+
+    if (vif.can_tx === 1'b0 && vif.ext_tx === 1'b1) begin
+      wait_clocks(timing_cfg.sample_point_cycles);
+      sof = vif.can_bus;
+
+      if (sof === 1'b0)
+        return;
+    end
+  end
+endtask
 
   task sample_raw_bit(output bit value);
     wait_clocks(timing_cfg.clocks_per_bit);
@@ -113,13 +136,13 @@ class can_passive_monitor extends uvm_monitor;
     tr.form_error = 0;
 
     wait_for_sof(sof);
-
+/*
     if (sof !== 1'b0) begin
       tr.form_error = 1;
       analysis_port.write(tr);
       return;
     end
-
+*/
     previous_bit = sof;
     same_count = 1;
 
@@ -250,6 +273,7 @@ class can_passive_monitor extends uvm_monitor;
   endtask
 
   task run_phase(uvm_phase phase);
+`uvm_info("CAN_PASS_MON", "Passive monitor run_phase started", UVM_LOW)
     forever begin
       monitor_frame();
     end

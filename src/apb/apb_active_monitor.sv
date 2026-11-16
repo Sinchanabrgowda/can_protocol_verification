@@ -24,6 +24,9 @@ class apb_active_monitor extends uvm_monitor;
 
       if (vif.monitor_cb.s_apb_psel === 1'b1 && vif.monitor_cb.s_apb_penable === 1'b1 && vif.monitor_cb.s_apb_pready === 1'b1) begin
         tr = apb_sequence_item::type_id::create("tr", this);
+   tr.psel    = vif.monitor_cb.s_apb_psel;
+tr.penable = vif.monitor_cb.s_apb_penable;
+tr.pready  = vif.monitor_cb.s_apb_pready;
         tr.paddr = vif.monitor_cb.s_apb_paddr;
         tr.pwrite = vif.monitor_cb.s_apb_pwrite;
         tr.pwdata= vif.monitor_cb.s_apb_pwdata;
