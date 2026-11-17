@@ -1,0 +1,5 @@
+dump -file waveform.fsdb
+dump -add top -fid FSDB0
+run
+dump -close
+exit

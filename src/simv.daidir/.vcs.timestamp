@@ -769,7 +769,7 @@
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/can_test/can_frame_dut_ack_virtual_seq_test.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/can_test/can_frame_dut_ack_virtual_seq_test.sv
 0 apb/can_test/can_frame_dut_ack_virtual_seq_test.sv
-48
+49
 +define+UVM_VCS_RECORD
 +define+UVM_VERDI_VIF_RECORD
 +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/
@@ -801,11 +801,12 @@
 -Mxllcflags=
 -P
 -V
--Xvcs_run_simv=1
+-Xufe=2steps
 -debug_access+all
 -fsdb
 -full64
 -gen_obj
+-kdb
 -l
 -ntb_opts
 -picarchive
@@ -818,10 +819,15 @@ fell.log
 uvm-1.2
 /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab
 can/can_top.sv
-41
-XDG_SESSION_ID=105032
+59
+XDG_SESSION_ID=73529
 XDG_RUNTIME_DIR=/run/user/6110
-XDG_DATA_DIRS=/home/sinchanabr/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+XDG_MENU_PREFIX=xfce-
+XDG_DATA_DIRS=/home/sinchanabr/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/usr/share
+XDG_CURRENT_DESKTOP=XFCE
+XDG_CONFIG_DIRS=/etc/xdg
+VTE_VERSION=5204
+VNCDESKTOP=feserver.mirafra.com:5 (sinchanabr)
 VMR_MODE_FLAG=64
 VERDI_HOME=/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8
 VENDOR=unknown
@@ -836,15 +842,19 @@ VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64
-SSH_TTY=/dev/pts/260
-SSH_CONNECTION=223.181.108.189 21306 192.168.1.16 22
-SSH_CLIENT=223.181.108.189 21306 22
+SSH_TTY=/dev/pts/234
+SSH_CONNECTION=106.51.38.11 64766 192.168.1.16 22
+SSH_CLIENT=106.51.38.11 64766 22
+SSH_AUTH_SOCK=/tmp/ssh-8p9nsy7Cd8Zf/agent.140978
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SSH_AGENT_PID=140979
 SPYGLASS_HOME=/fetools/synopsys/installed_tools/spyglass/S-2021.09-SP1/SPYGLASS_HOME
+SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
 SNPSLMD_QUEUE=true
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/140967,unix/unix:/tmp/.ICE-unix/140967
 SCRNAME=vcs
 SCRIPT_NAME=vcs
-REMOTEHOST=223.181.108.189
+REMOTEHOST=106.51.38.11
 QT_GRAPHICSSYSTEM_CHECKED=1
 QTLIB=/usr/lib64/qt-3.3/lib
 QTINC=/usr/lib64/qt-3.3/include
@@ -852,14 +862,23 @@ QTDIR=/usr/lib64/qt-3.3
 Prime_HOME=/fetools/synopsys/installed_tools/primetime/prime/S-2021.06-SP2
 OVA_UUM=0
 OSTYPE=linux
+MTI_HOME=/tools/mentor/questasim/questasim/
+MGLS_HOME=/tools/mentor/questasim/questasim/linux/mgls
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 LC_ALL=C
 ICC_HOME=/fetools/synopsys/installed_tools/icc2/Q-2019.12-SP1
 HOSTTYPE=x86_64-linux
+HOME_0IN=/tools/mentor/questacdc/linux
 HISTCONTROL=ignoredups
 GROUP=sinchanabr
+GLADE_PIXMAP_PATH=:
+GLADE_MODULE_PATH=:
+GLADE_CATALOG_PATH=:
 FORMALITY=/fetools/synopsys/installed_tools/Formality/fm/S-2021.06-SP2
+DESKTOP_SESSION=xfce
 DC_HOME=/fetools/synopsys/installed_tools/syn/S-2021.06-SP4
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wJ5tdNRqLW,guid=7cf93bd9180a626a5e13ba026a71a8e4
+COLORTERM=truecolor
 0
 220
 1794569953 can/can_test/can_frame_dut_ack_virtual_seq_test.sv
@@ -1089,5 +1108,5 @@ DC_HOME=/fetools/synopsys/installed_tools/syn/S-2021.06-SP4
 1631416743 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/liberrorinf.so
 1631416702 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libsnpsmalloc.so
 1631416739 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libvfs.so
-1794570015 simv.daidir
+1794823017 simv.daidir
 -1 partitionlib

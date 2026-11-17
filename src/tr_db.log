@@ -78,3 +78,18 @@
   CREATE_STREAM @0 {NAME:v_seq T:Transactions SCOPE:uvm_test_top.can_e.virtual_seqr STREAM:1343}
   CREATE_STREAM @0 {NAME:can_seq T:Transactions SCOPE:uvm_test_top.can_e.can_agt.sequencer STREAM:1360}
   CREATE_STREAM @0 {NAME:ral_seq T:Transactions SCOPE:uvm_test_top.can_e.apb_agt.sequencer STREAM:1365}
+  CREATE_STREAM @0 {NAME:v_seq T:Transactions SCOPE:uvm_test_top.can_e.virtual_seqr STREAM:1343}
+  CREATE_STREAM @0 {NAME:can_seq T:Transactions SCOPE:uvm_test_top.can_e.can_agt.sequencer STREAM:1360}
+  CREATE_STREAM @0 {NAME:ral_seq T:Transactions SCOPE:uvm_test_top.can_e.apb_agt.sequencer STREAM:1365}
+  CREATE_STREAM @0 {NAME:v_seq T:Transactions SCOPE:uvm_test_top.can_e.virtual_seqr STREAM:1343}
+  CREATE_STREAM @0 {NAME:can_seq T:Transactions SCOPE:uvm_test_top.can_e.can_agt.sequencer STREAM:1360}
+  CREATE_STREAM @0 {NAME:ral_seq T:Transactions SCOPE:uvm_test_top.can_e.apb_agt.sequencer STREAM:1365}
+  CREATE_STREAM @0 {NAME:v_seq T:Transactions SCOPE:uvm_test_top.can_e.virtual_seqr STREAM:1343}
+  CREATE_STREAM @0 {NAME:can_seq T:Transactions SCOPE:uvm_test_top.can_e.can_agt.sequencer STREAM:1360}
+  CREATE_STREAM @0 {NAME:ral_seq T:Transactions SCOPE:uvm_test_top.can_e.apb_agt.sequencer STREAM:1365}
+  CREATE_STREAM @0 {NAME:v_seq T:Transactions SCOPE:uvm_test_top.can_e.virtual_seqr STREAM:1343}
+  CREATE_STREAM @0 {NAME:can_seq T:Transactions SCOPE:uvm_test_top.can_e.can_agt.sequencer STREAM:1360}
+  CREATE_STREAM @0 {NAME:ral_seq T:Transactions SCOPE:uvm_test_top.can_e.apb_agt.sequencer STREAM:1365}
+  CREATE_STREAM @0 {NAME:v_seq T:Transactions SCOPE:uvm_test_top.can_e.virtual_seqr STREAM:1343}
+  CREATE_STREAM @0 {NAME:can_seq T:Transactions SCOPE:uvm_test_top.can_e.can_agt.sequencer STREAM:1360}
+  CREATE_STREAM @0 {NAME:ral_seq T:Transactions SCOPE:uvm_test_top.can_e.apb_agt.sequencer STREAM:1365}

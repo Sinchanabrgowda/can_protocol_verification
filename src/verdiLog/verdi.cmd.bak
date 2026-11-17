@@ -1,0 +1,66 @@
+simSetSimulator "-vcssv" -exec \
+           "/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/simv" \
+           -args "-ucli +UVM_TESTNAME=can_frame_dut_ack_virtual_seq_test"
+debImport "-dbdir" \
+          "/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/simv.daidir"
+debLoadSimResult \
+           /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/waveform.fsdb
+wvCreateWindow
+verdiDockWidgetSetCurTab -dock widgetDock_<Inst._Tree>
+srcHBSelect "top.can_vif" -win $_nTrace1
+verdiDockWidgetSetCurTab -dock widgetDock_<Decl._Tree>
+verdiDockWidgetSetCurTab -dock widgetDock_<Inst._Tree>
+verdiDockWidgetSetCurTab -dock widgetDock_<Decl._Tree>
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_clk"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+wvRenameGroup -win $_nWave2 {G1} {can_bus}
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_clk"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_clk"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_clk"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_clk"
+wvRenameGroup -win $_nWave2 {can_bus} {can_clk}
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_irq"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_irq"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_irq"
+wvRenameGroup -win $_nWave2 {can_clk} {can_irq}
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_rx"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_rx"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_rx"
+wvRenameGroup -win $_nWave2 {can_irq} {can_rx}
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_tx"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_tx"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_tx"
+wvRenameGroup -win $_nWave2 {can_rx} {can_tx}
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.ext_tx"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.ext_tx"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.ext_tx"
+wvRenameGroup -win $_nWave2 {can_tx} {ext_tx}
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_irq"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_resetn"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_resetn"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_resetn"
+wvRenameGroup -win $_nWave2 {ext_tx} {can_resetn}
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_irq"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_irq"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_irq"
+wvRenameGroup -win $_nWave2 {can_resetn} {can_irq}
+wvSetCursor -win $_nWave2 836.231209
+wvSetCursor -win $_nWave2 480.592649
+wvSetCursor -win $_nWave2 1297.600153
+wvSetCursor -win $_nWave2 2489.469922
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+srcTBBTreeSelect -win $_nTrace1 -path "can_interface.can_bus"
+wvRenameGroup -win $_nWave2 {can_irq} {can_bus}
+wvSetCursor -win $_nWave2 730.500827
+wvSetCursor -win $_nWave2 1739.745390
+wvSetCursor -win $_nWave2 1249.540888
+wvSetCursor -win $_nWave2 2989.286277
+debExit
