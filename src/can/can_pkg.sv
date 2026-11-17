@@ -19,10 +19,13 @@ package can_pkg;
 
   `include "can_sequences/basic_can_sequence.sv"
   `include "can_sequences/can_ack_dut_frame.sv"
-  `include "can_sequences/can_drive_basic_frame.sv"
+`include "can_sequences/can_ext_frame_ack_seq.sv"  
+`include "can_sequences/can_drive_basic_frame.sv"
 
   `include "can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv"
+`include "can_virtual_sequences/can_ext_frame_dut_ack_virtual_seq.sv"
 
   `include "can_test/can_frame_dut_ack_virtual_seq_test.sv"
+`include "can_test/can_ext_frame_dut_ack_virtual_seq_test.sv"
 
 endpackage

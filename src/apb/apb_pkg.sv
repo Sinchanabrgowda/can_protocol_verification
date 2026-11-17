@@ -12,6 +12,7 @@ package apb_pkg;
   `include "can_reg_block.sv"
   `include "can_ral_sequence/can_base_reg_seq.sv"
   `include "can_ral_sequence/can_tx_basic_seq.sv"
+`include "can_ral_sequence/can_ext_tx_basic_seq.sv"
 
 endpackage
 

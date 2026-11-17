@@ -81,7 +81,7 @@ class can_tx_basic_seq extends can_base_reg_seq;
     can_regmodel.tx_dw2_reg_inst.write(status, 32'h00000000);
 
     //  Wait for transmission and inspect status
-    #1ms;
+//    #1ms;
 
     can_regmodel.sr_reg_inst.read(status, rdata);
     `uvm_info("CAN_TX_SEQ",$sformatf("CAN Status = %08h", rdata),UVM_LOW)
