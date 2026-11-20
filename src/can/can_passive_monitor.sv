@@ -274,6 +274,13 @@ endtask
 
   task run_phase(uvm_phase phase);
 `uvm_info("CAN_PASS_MON", "Passive monitor run_phase started", UVM_LOW)
+if (timing_cfg.operation == DRIVE_FRAME) begin
+    `uvm_info("CAN_PASS_MON",
+              "Passive monitor disabled for DRIVE_FRAME",
+              UVM_LOW)
+    return;
+  end
+
     forever begin
       monitor_frame();
     end

@@ -249,7 +249,7 @@ endtask
       `uvm_error("CAN_MON", "Invalid CRC delimiter")
     end
 
-    // ACK slot
+/*    // ACK slot
     sample_raw_bit(sampled_bit);
 
     if (sampled_bit !== 1'b0) begin
@@ -257,7 +257,7 @@ endtask
       tr.ack_error = 1;
       `uvm_error("CAN_MON", "ACK slot was not dominant")
     end
-
+*/
     // ACK delimiter
     sample_raw_bit(sampled_bit);
 

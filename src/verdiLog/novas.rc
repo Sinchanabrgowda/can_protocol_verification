@@ -375,8 +375,10 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-QwWarnMsgDlg = 668,540,600,250
-QwUserAskDlg = 804,508,324,134
+QwWarnMsgDlg = 671,569,600,250
+qWaveSignalDialog = 563,306,800,479
+SigCPLDialog = 851,375,223,340
+QwUserAskDlg = 807,537,324,134
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -667,27 +669,27 @@ visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = Message
-width = 2000
-visualIndex = 4
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = Time
-width = 60
-visualIndex = 0
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = Code
 width = 60
 visualIndex = 2
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = Type
 width = 60
 visualIndex = 3
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = Message
+width = 2000
+visualIndex = 4
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = Time
+width = 60
+visualIndex = 0
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [Vi]
@@ -709,8 +711,8 @@ waveform_vertical_scroll_bar = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 25 1920 383 226 65
+getSignalForm = 563 306 800 479 245 381 505 183
+viewPort = 0 25 1920 569 226 241
 signalSpacing = 5
 digitalSignalHeight = 15
 analogSignalHeight = 98
@@ -777,6 +779,7 @@ analogVoltageStyle = pwl
 analogCurrentStyle = pwl
 analogOthersStyle = pwl
 busSignalLayer = -c ID_ORANGE8
+busXLayer = -c ID_RED5
 busZLayer = -c ID_ORANGE6
 busMixedLayer = -c ID_GREEN5
 busNotComputedLayer = -c ID_GRAY1
@@ -1350,7 +1353,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 1920 383 226 65
+viewPort = 0 25 1920 569 226 241
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

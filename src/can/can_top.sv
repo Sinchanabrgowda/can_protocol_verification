@@ -100,7 +100,9 @@ initial begin
 end
   initial begin
 uvm_top.set_timeout(100us);
-    run_test("can_ext_frame_dut_ack_virtual_seq_test");
-  end
+    run_test("can_std_frame_rx_ack_virtual_seq_test");
+ //run_test("can_frame_dut_ack_virtual_seq_test");
+ 
+ end
 
 endmodule

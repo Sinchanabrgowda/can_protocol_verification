@@ -23,7 +23,7 @@ fell.log +incdir+apb +incdir+can +incdir+apb/can_ral_sequence can/can_top.sv
 -fsdb -sverilog -gen_obj +incdir+apb +incdir+can +incdir+apb/can_ral_sequence can/can_top.sv \
 
                          Chronologic VCS (TM)
-      Version Q-2020.03-SP2-8_Full64 -- Thu Nov 12 16:17:35 2026
+      Version Q-2020.03-SP2-8_Full64 -- Fri Nov 20 14:08:54 2026
                Copyright (c) 1991-2020 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -376,4 +376,4 @@ Error-[SFCOR] Source file cannot be opened
   
 
 1 error
-CPU time: .951 seconds to compile
+CPU time: 1.132 seconds to compile

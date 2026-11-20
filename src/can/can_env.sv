@@ -69,10 +69,10 @@ virtual_seqr.can_regmodel = can_regmodel;
     can_predictor_inst.map = can_regmodel.default_map;
     can_predictor_inst.adapter = c_adapter;
 
-
+/*
  if (apb_agt.get_is_active() == UVM_ACTIVE) begin
     apb_agt.active_monitor.analysis_port.connect( can_predictor_inst.bus_in );
-    apb_agt.active_monitor.analysis_port.connect( can_scb.apb_active_imp );
+   apb_agt.active_monitor.analysis_port.connect( can_scb.apb_active_imp );
     apb_agt.active_monitor.analysis_port.connect(can_subscrb.apb_active_port);
 end
 
@@ -80,6 +80,31 @@ else begin
     apb_agt.passive_monitor.analysis_port.connect(can_scb.apb_passive_imp);
    apb_agt.passive_monitor.analysis_port.connect( can_subscrb.apb_passive_port );
 end
+*/
+
+/*
+ apb_agt.active_monitor.analysis_port.connect( can_scb.apb_active_imp );
+    apb_agt.active_monitor.analysis_port.connect(can_subscrb.apb_active_port);
+
+    apb_agt.passive_monitor.analysis_port.connect(can_scb.apb_passive_imp);
+   apb_agt.passive_monitor.analysis_port.connect( can_subscrb.apb_passive_port );
+*/
+
+if (apb_agt.get_is_active() == UVM_ACTIVE) begin
+    apb_agt.active_monitor.analysis_port.connect(can_predictor_inst.bus_in);
+
+    apb_agt.active_monitor.analysis_port.connect(can_scb.apb_active_imp);
+    apb_agt.active_monitor.analysis_port.connect(can_scb.apb_passive_imp);
+
+    apb_agt.active_monitor.analysis_port.connect(can_subscrb.apb_active_port);
+end
+else begin
+    apb_agt.passive_monitor.analysis_port.connect(can_scb.apb_active_imp);
+    apb_agt.passive_monitor.analysis_port.connect(can_scb.apb_passive_imp);
+
+    apb_agt.passive_monitor.analysis_port.connect(can_subscrb.apb_passive_port);
+end
+
 
     can_agt.active_monitor.analysis_port.connect( can_scb.can_active_imp);
    can_agt.active_monitor.analysis_port.connect( can_subscrb.can_active_port );

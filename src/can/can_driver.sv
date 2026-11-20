@@ -461,7 +461,7 @@ end
       crc_new[3]  = crc[2] ^ fb;
       crc_new[4]  = crc[3] ^ fb;
       crc_new[5]  = crc[4];
-      crc_new[6]  = crc[5] ^ fb;
+      crc_new[6]  = crc[5] ;
       crc_new[7]  = crc[6] ^ fb;
       crc_new[8]  = crc[7] ^ fb;
       crc_new[9]  = crc[8];
@@ -576,7 +576,7 @@ end
 
     drive_one_bit(value, 1'b0, arbitration_lost);
   endtask
-
+/*
   task sample_ack_slot(output bit ack_received);
     bit sampled_bit;
 
@@ -589,11 +589,47 @@ end
 
     wait_clocks( timing_cfg.clocks_per_bit -  timing_cfg.sample_point_cycles );
 
+ //@(negedge vif.can_clk);
     if (!ack_received)
       `uvm_error("CAN_DRV", "No ACK received from DUT")
     else
       `uvm_info("CAN_DRV", "DUT ACK received", UVM_MEDIUM)
   endtask
+*/
+
+task sample_ack_slot(output bit ack_received);
+    bit sampled_bit;
+
+    vif.ext_tx = 1'b1;
+
+    // Wait until the ACK slot sample point
+    wait_clocks(timing_cfg.sample_point_cycles-4);
+
+$display("ACK CHECK: time=%0t clk=%0b can_tx=%0b can_bus=%0b",
+         $time, vif.can_clk, vif.can_tx, vif.can_bus);    
+sampled_bit = vif.can_bus;
+
+    $display("\n========== ACK SLOT DEBUG ==========");
+    $display("Time       = %0t", $time);
+    $display("ext_tx     = %0b", vif.ext_tx);
+    $display("can_tx     = %0b", vif.can_tx);
+    $display("can_bus    = %0b", vif.can_bus);
+    $display("sampled_bit= %0b", sampled_bit);
+    $display("====================================\n");
+
+    ack_received = (sampled_bit === 1'b0);
+
+    wait_clocks(timing_cfg.clocks_per_bit -
+                timing_cfg.sample_point_cycles);
+
+    @(negedge vif.can_clk);
+
+    if (!ack_received)
+        `uvm_error("CAN_DRV", "No ACK received from DUT")
+    else
+        `uvm_info("CAN_DRV", "DUT ACK received", UVM_MEDIUM)
+
+endtask
 
   task drive_frame(can_sequence_item req);
     bit ack_received;
@@ -637,8 +673,9 @@ end
     end
 
     rx_replay_bits.delete();
-
+$display("Before CRC delimiter: time=%0t", $time);
     drive_one_non_arbitration_bit(1'b1);
+$display("After CRC delimiter: time=%0t", $time);
 
     sample_ack_slot(ack_received);
 

@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_Q-2020.03-SP2-8
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1920 569 226 241
+viewPort 0 25 1920 391 226 241
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 164425.000000
-cursor 10575.000000
+zoom 0.000000 155540.000000
+cursor 0.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 7
+markerPos 6
 
 ; event list
 ; addEvent event_name event_expression
@@ -45,11 +45,10 @@ COMPLEX_EVENT_END
 curSTATUS ByChange
 
 
-addGroup "can_clk" -c ID_GREEN5
+addGroup "G1"
 activeDirFile "" "/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/waveform.fsdb"
 addSignal -h 15 /top/can_vif/can_bus
 addSignal -h 15 -holdScope can_clk
-addSignal -h 15 -holdScope can_irq
 addSignal -h 15 -holdScope can_resetn
 addSignal -h 15 -holdScope can_rx
 addSignal -h 15 -holdScope can_tx
@@ -64,17 +63,10 @@ GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
 
 "/top"
-"/top/apb_vif"
-"/top/can_vif"
 
 SCOPE_LIST_BEGIN
 "/top"
 "/top/can_vif"
-"/top/can_vif/MONITOR"
-"/top/can_vif/DRIVER"
-"/top/can_vif/driver_cb"
-"/top/can_vif/monitor_cb"
-"/top/apb_vif"
 SCOPE_LIST_END
 
 GETSIGNALFORM_SCOPE_HIERARCHY_END

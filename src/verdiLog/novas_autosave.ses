@@ -26,7 +26,7 @@ fdb_campaign =
 fdb_tool = 
 [hb]
 postSimFile = /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/waveform.fsdb
-syncTime = 10575
+syncTime = 0
 viewport = 0 31 1920 971 0 0 365 1918
 activeNode = "top"
 activeScope = "top"
@@ -68,7 +68,7 @@ WaveformFile = /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_veri
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 1920 569 226 241
+viewPort = 0 25 1920 391 226 241
 primaryWindow = TRUE
 SessionFile = /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
