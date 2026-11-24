@@ -375,10 +375,10 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-QwWarnMsgDlg = 671,569,600,250
-qWaveSignalDialog = 563,306,800,479
 SigCPLDialog = 851,375,223,340
-QwUserAskDlg = 807,537,324,134
+QwWarnMsgDlg = 674,598,600,250
+qWaveSignalDialog = 563,306,800,479
+QwUserAskDlg = 810,566,324,134
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -455,7 +455,7 @@ SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
 vcs_svPath = /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/simv
-vcs_svOption = -ucli +UVM_TESTNAME=can_frame_dut_ack_virtual_seq_test
+vcs_svOption = -ucli +UVM_TESTNAME=can_std_frame_rx_ack_virtual_seq_test
 [SimulationPlus2]
 eventDumpUnfinish = FALSE
 [Source]
@@ -712,7 +712,7 @@ scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
 getSignalForm = 563 306 800 479 245 381 505 183
-viewPort = 0 25 1920 569 226 241
+viewPort = 0 25 1920 391 226 241
 signalSpacing = 5
 digitalSignalHeight = 15
 analogSignalHeight = 98
@@ -1353,7 +1353,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 1920 569 226 241
+viewPort = 0 25 1920 391 226 241
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

@@ -1,3 +1,3 @@
 Command Line: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/platform/LINUXAMD64/bin/Novas -ssf waveform.fsdb
 uname(Linux feserver.mirafra.com 3.10.0-1160.114.2.el7.x86_64 #1 SMP Wed Mar 20 15:54:52 UTC 2024 x86_64)
-au time 178.230600 8.268936 3.126287 delta 363438080 363438080 total 821252096 821252096
+au time 75.182966 5.435016 1.930347 delta 308756480 308756480 total 766570496 766570496

@@ -376,9 +376,9 @@ savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
 SigCPLDialog = 851,375,223,340
-QwWarnMsgDlg = 674,598,600,250
+QwWarnMsgDlg = 677,627,600,250
 qWaveSignalDialog = 563,306,800,479
-QwUserAskDlg = 810,566,324,134
+QwUserAskDlg = 813,595,324,134
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -663,9 +663,9 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = Severity
+name = Time
 width = 60
-visualIndex = 1
+visualIndex = 0
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
@@ -687,9 +687,9 @@ visualIndex = 4
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = Time
+name = Severity
 width = 60
-visualIndex = 0
+visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [Vi]

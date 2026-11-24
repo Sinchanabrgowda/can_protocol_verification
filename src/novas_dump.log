@@ -86,7 +86,7 @@ VCS compile option:
  option[1]: -ucli
  option[2]: -i
  option[3]: wave.tcl
- option[4]: +UVM_TESTNAME=can_std_frame_rx_ack_virtual_seq_test
+ option[4]: +UVM_TESTNAME=can_ext_frame_rx_ack_virtual_seq_test
  option[5]: /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/bin/vcs1
  option[6]: -Mcc=gcc
  option[7]: -Mcplusplus=g++
@@ -114,30 +114,29 @@ VCS compile option:
  option[29]: /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv
  option[30]: +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi
  option[31]: /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv
- option[32]: -V
- option[33]: -full64
- option[34]: -ntb_opts
- option[35]: uvm-1.2
- option[36]: +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/
- option[37]: +v2k
- option[38]: -debug_access+all
- option[39]: +vpi
- option[40]: +vcsd1
- option[41]: +itf+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcsdp_lite.tab
- option[42]: -kdb
- option[43]: -Xufe=2steps
- option[44]: -picarchive
- option[45]: -P
- option[46]: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab
- option[47]: -fsdb
- option[48]: -sverilog
- option[49]: -gen_obj
- option[50]: +incdir+apb
- option[51]: +incdir+can
- option[52]: +incdir+apb/can_ral_sequence
- option[53]: can/can_top.sv
- option[54]: -load
- option[55]: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
+ option[32]: -Xvcs_run_simv=1
+ option[33]: -V
+ option[34]: -full64
+ option[35]: -ntb_opts
+ option[36]: uvm-1.2
+ option[37]: +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/
+ option[38]: +v2k
+ option[39]: -debug_access+all
+ option[40]: +vpi
+ option[41]: +vcsd1
+ option[42]: +itf+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcsdp_lite.tab
+ option[43]: -picarchive
+ option[44]: -P
+ option[45]: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab
+ option[46]: -fsdb
+ option[47]: -sverilog
+ option[48]: -gen_obj
+ option[49]: +incdir+apb
+ option[50]: +incdir+can
+ option[51]: +incdir+apb/can_ral_sequence
+ option[52]: can/can_top.sv
+ option[53]: -load
+ option[54]: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
 Chronologic Simulation VCS Release Q-2020.03-SP2-8_Full64
 Linux 3.10.0-1160.114.2.el7.x86_64 #1 SMP Wed Mar 20 15:54:52 UTC 2024 x86_64
 CPU cores: 256
@@ -214,77 +213,77 @@ argv[0]=./simv
 argv[1]=-ucli
 argv[2]=-i
 argv[3]=wave.tcl
-argv[4]=+UVM_TESTNAME=can_std_frame_rx_ack_virtual_seq_test
-217 profile - 100
-          CPU/Mem usage: 0.240 sys,  0.470 user,  417.39M mem
-218 Elapsed time:    0:00:03    Fri Nov 20 14:11:07 2026
-219 pliAppInit
-220 FSDB_GATE is set.
+argv[4]=+UVM_TESTNAME=can_ext_frame_rx_ack_virtual_seq_test
+216 profile - 100
+          CPU/Mem usage: 0.200 sys,  0.440 user,  417.49M mem
+217 Elapsed time:    0:00:03    Fri Nov 20 15:43:58 2026
+218 pliAppInit
+219 FSDB_GATE is set.
+220 FSDB_RTL is set.
 221 FSDB_RTL is set.
-222 FSDB_RTL is set.
-223 FSDB_FIELDTYPE is set.
-224 Enable Parallel Dumping.
-225 pliAppMiscSet: New Sim Round
-226 pliEntryInit
-227 LIBSSCORE=found /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/lib/LINUXAMD64/libsscore_vcs202003.so through $NOVAS_HOME setting.
-228 FSDB Dumper for VCS, Release Verdi_Q-2020.03-SP2-8, Linux x86_64/64bit, 08/31/2021
-229 (C) 1996 - 2021 by Synopsys, Inc.
-230 sps_tcl_fsdbDumpfile_main at 0
-231 argv[0]: waveform.fsdb
-232 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-233 *Verdi* : Create FSDB file 'waveform.fsdb'
-234 compile option from '/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/simv.daidir/vcs_rebuild'.
-235   "vcs '-V' '-full64' '-sverilog' '-ntb_opts' 'uvm-1.2' '+v2k' '-debug_access+all' '-kdb' '-l' 'fell.log' '+incdir+apb' '+incdir+can' '+incdir+apb/can_ral_sequence' 'can/can_top.sv' 2>&1"
-236 DVDI_is_vir_unload_enabled is enable
-237 FSDB_VCS_ENABLE_NATIVE_VC is enable
-238 sps_tcl_fsdbDumpvars_vd_main
-239 argv[0]: 0
-240 argv[1]: top
-241 argv[2]: +fsdbfile+waveform.fsdb
-242 [spi_vcs_vd_ppi_create_root]: no upf option
-243 FSDB dumper cannot dump UPF related power signal ($power_tree): no ppiPowerNetwork.
-244 Power dumping is enabled and VIR_REDUCTION may not work.
-245 *Verdi* : Begin traversing the scope (top), layer (0).
-246 *Verdi* : End of traversing.
-247 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.270 sys,  0.550 user,  518.02M mem
-                   incr: 0.010 sys,  0.020 user,  8.37M mem
-                   accu: 0.010 sys,  0.020 user,  8.37M mem
-              accu incr: 0.010 sys,  0.020 user,  8.37M mem
+222 FSDB_FIELDTYPE is set.
+223 Enable Parallel Dumping.
+224 pliAppMiscSet: New Sim Round
+225 pliEntryInit
+226 LIBSSCORE=found /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/lib/LINUXAMD64/libsscore_vcs202003.so through $NOVAS_HOME setting.
+227 FSDB Dumper for VCS, Release Verdi_Q-2020.03-SP2-8, Linux x86_64/64bit, 08/31/2021
+228 (C) 1996 - 2021 by Synopsys, Inc.
+229 sps_tcl_fsdbDumpfile_main at 0
+230 argv[0]: waveform.fsdb
+231 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+232 *Verdi* : Create FSDB file 'waveform.fsdb'
+233 compile option from '/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/simv.daidir/vcs_rebuild'.
+234   "vcs '-V' '-R' '-full64' '-sverilog' '-ntb_opts' 'uvm-1.2' '+v2k' '-debug_access+all' '-l' 'fell.log' '+incdir+apb' '+incdir+can' '+incdir+apb/can_ral_sequence' 'can/can_top.sv' 2>&1"
+235 DVDI_is_vir_unload_enabled is enable
+236 FSDB_VCS_ENABLE_NATIVE_VC is enable
+237 sps_tcl_fsdbDumpvars_vd_main
+238 argv[0]: 0
+239 argv[1]: top
+240 argv[2]: +fsdbfile+waveform.fsdb
+241 [spi_vcs_vd_ppi_create_root]: no upf option
+242 FSDB dumper cannot dump UPF related power signal ($power_tree): no ppiPowerNetwork.
+243 Power dumping is enabled and VIR_REDUCTION may not work.
+244 *Verdi* : Begin traversing the scope (top), layer (0).
+245 *Verdi* : End of traversing.
+246 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.230 sys,  0.510 user,  518.35M mem
+                   incr: 0.010 sys,  0.010 user,  8.61M mem
+                   accu: 0.010 sys,  0.010 user,  8.61M mem
+              accu incr: 0.010 sys,  0.010 user,  8.61M mem
 
           Count usage: 950 var,  579 idcode,  304 callback
                  incr: 950 var,  579 idcode,  304 callback
                  accu: 950 var,  579 idcode,  304 callback
             accu incr: 950 var,  579 idcode,  304 callback
-248 Elapsed time:    0:00:03    Fri Nov 20 14:11:07 2026
-249 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.270 sys,  0.550 user,  519.07M mem
+247 Elapsed time:    0:00:03    Fri Nov 20 15:43:58 2026
+248 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.230 sys,  0.510 user,  519.41M mem
                    incr: 0.000 sys,  0.000 user,  1.05M mem
-                   accu: 0.010 sys,  0.020 user,  9.42M mem
+                   accu: 0.010 sys,  0.010 user,  9.66M mem
               accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
           Count usage: 950 var,  579 idcode,  304 callback
                  incr: 0 var,  0 idcode,  0 callback
                  accu: 950 var,  579 idcode,  304 callback
             accu incr: 0 var,  0 idcode,  0 callback
-250 Elapsed time:    0:00:03    Fri Nov 20 14:11:07 2026
-251 sps_tcl_fsdbDumpflush_vd_main
-252 *Verdi* : Flush all FSDB Files at 0 s.
-253 End of simulation at 154000
-254 Elapsed time:    0:00:08    Fri Nov 20 14:11:12 2026
-255 Begin FSDB profile info:
-256 FSDB Writer : bc1(168282) bcn(85770) mtf/stf(0/1)
-FSDB Writer elapsed time : flush(0.026529) io wait(0.000000) theadpool wait(0.000000)
+249 Elapsed time:    0:00:03    Fri Nov 20 15:43:58 2026
+250 sps_tcl_fsdbDumpflush_vd_main
+251 *Verdi* : Flush all FSDB Files at 0 s.
+252 End of simulation at 300175
+253 Elapsed time:    0:00:10    Fri Nov 20 15:44:05 2026
+254 Begin FSDB profile info:
+255 FSDB Writer : bc1(336326) bcn(168417) mtf/stf(0/1)
+FSDB Writer elapsed time : flush(0.026924) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
-257 End FSDB profile info
-258 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-259                      - BlockUsed:3 Acquire:284548 BufferUsed:3376370
-260                      - Flush:4 Expand:0 ProducerWait:0 ConsumerWait:1
-261                      - MainProducerTime:4.595980235 TotalConsumerTime:0.020997250
-262                      - ElapsedTime:4.923682000
-263 Producer   0 profile - BlockUsed:3 Acquire:284548 BufferUsed:3376370
-264 Consumer   0 profile - Affinity:-1 CPUTime:0.020997250 LifeTime:1.538527929 (0.01%)
-265                      - BlockUsed:3 Acquire:284548 BufferUsed:3376370
-266 SimExit
-267 Elapsed time:    0:00:08    Fri Nov 20 14:11:12 2026
-268 Sim process exit
+256 End FSDB profile info
+257 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+258                      - BlockUsed:5 Acquire:564474 BufferUsed:6678726
+259                      - Flush:4 Expand:0 ProducerWait:0 ConsumerWait:3
+260                      - MainProducerTime:6.771801301 TotalConsumerTime:0.038838758
+261                      - ElapsedTime:6.859501000
+262 Producer   0 profile - BlockUsed:5 Acquire:564474 BufferUsed:6678726
+263 Consumer   0 profile - Affinity:-1 CPUTime:0.038838758 LifeTime:4.193933236 (0.01%)
+264                      - BlockUsed:5 Acquire:564474 BufferUsed:6678726
+265 SimExit
+266 Elapsed time:    0:00:10    Fri Nov 20 15:44:05 2026
+267 Sim process exit
