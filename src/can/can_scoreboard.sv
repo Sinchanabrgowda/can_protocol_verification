@@ -47,6 +47,8 @@ class can_scoreboard extends uvm_scoreboard;
 
   int pass_count;
   int error_count;
+  
+  bit internal_loopback;
 
 
   function new(string name = "can_scoreboard",uvm_component parent = null);
@@ -60,6 +62,9 @@ class can_scoreboard extends uvm_scoreboard;
     apb_passive_imp = new("apb_passive_imp", this);
     can_active_imp  = new("can_active_imp", this);
     can_passive_imp = new("can_passive_imp", this);
+    if (!uvm_config_db#(bit)::get(this, "", "internal_loopback",internal_loopback))
+  internal_loopback = 0;
+
   endfunction
 
 
@@ -280,9 +285,24 @@ endfunction
 
     end
 
-    expected_can_q.push_back(expected);
+    if (internal_loopback) begin
 
+  // In internal loopback, the transmitted frame is
+  // also the expected received frame.
+  expected_rx_q.push_back(expected);
+
+  `uvm_info("CAN_SB",
+            "Internal loopback: expected RX frame queued from TX registers",
+            UVM_MEDIUM)
+
+end
+else begin
+
+  // Normal external DUT TX checking
+  expected_can_q.push_back(expected);
     `uvm_info("CAN_SB",$sformatf( "Expected DUT TX frame queued: IDE=%0b ID_BASE=%03h ID_EXT=%05h RTR=%0b DLC=%0d",expected.ide, expected.id_base, expected.id_ext, expected.rtr,  expected.dlc),UVM_MEDIUM)
+  
+end
 
   endfunction
 
@@ -295,6 +315,9 @@ endfunction
   function void write_can_passive(can_sequence_item tr);
 
     can_sequence_item expected;
+    
+    if (internal_loopback)
+    return;
 
     if (expected_can_q.size() == 0) begin
       `uvm_error("CAN_SB", "DUT transmitted a CAN frame, but no expected frame is queued")
@@ -320,6 +343,9 @@ endfunction
     bit frame_error;
     bit [14:0] calculated_crc;
 
+    if (internal_loopback)
+    return;
+    
     frame_error = check_monitor_errors(tr, "CAN input");
 
     // Validate CRC of the CAN frame sent from tb
@@ -570,4 +596,3 @@ endfunction
   endfunction
 
 endclass
-

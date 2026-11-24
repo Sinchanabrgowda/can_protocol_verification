@@ -16,7 +16,6 @@ class can_frame_loopback_virtual_seq extends uvm_sequence #(uvm_sequence_item);
 
     ral_seq_loopback.can_regmodel = p_sequencer.can_regmodel;
 
-`uvm_info("VSEQ", "Starting CAN ACK sequence", UVM_LOW)
 
 fork
 

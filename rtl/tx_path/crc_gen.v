@@ -125,11 +125,4 @@ module crc_gen (
             crc_emit_done <= next_crc_emit_done;
         end
     end
-always @(posedge can_clk) begin
-    if (can_rst_n_sync) begin
-        $display("CRC INPUT: time=%0t bit_in=%b valid=%b ready=%b update=%b crc_reg=%h",
-                 $time, bit_in, bit_in_valid, bit_in_ready,
-                 crc_update_en, crc_reg);
-    end
-end
 endmodule

@@ -11,9 +11,9 @@ class can_frame_loopback_virtual_seq_test extends uvm_test;
 
   function void build_phase(uvm_phase phase);
  super.build_phase(phase);
-  uvm_config_db#(can_operation_e)::set(
-  this, "can_e", "operation", ACK_DUT_FRAME
-);
+uvm_config_db#(bit)::set(
+    this, "can_e.can_scb", "internal_loopback", 1'b1
+  );
 
  can_e = can_env::type_id::create("can_e", this);
  endfunction
