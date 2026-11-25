@@ -376,9 +376,9 @@ savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
 SigCPLDialog = 851,375,223,340
-QwWarnMsgDlg = 677,627,600,250
+QwWarnMsgDlg = 689,743,600,250
 qWaveSignalDialog = 563,306,800,479
-QwUserAskDlg = 813,595,324,134
+QwUserAskDlg = 822,682,324,134
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -455,7 +455,7 @@ SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
 vcs_svPath = /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/simv
-vcs_svOption = -ucli +UVM_TESTNAME=can_std_frame_rx_ack_virtual_seq_test
+vcs_svOption = -ucli +UVM_TESTNAME=can_ext_frame_loopback_virtual_seq_test
 [SimulationPlus2]
 eventDumpUnfinish = FALSE
 [Source]
@@ -663,28 +663,28 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
+name = Message
+width = 2000
+visualIndex = 4
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = Time
 width = 60
 visualIndex = 0
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = Code
 width = 60
 visualIndex = 2
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = Type
 width = 60
 visualIndex = 3
 isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
-name = Message
-width = 2000
-visualIndex = 4
-isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
 name = Severity

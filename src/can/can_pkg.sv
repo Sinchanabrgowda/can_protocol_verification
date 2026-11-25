@@ -28,6 +28,7 @@ package can_pkg;
 `include "can_virtual_sequences/can_std_frame_rx_ack_virtual_seq.sv"
 `include "can_virtual_sequences/can_ext_frame_rx_ack_virtual_seq.sv"
 `include "can_virtual_sequences/can_frame_loopback_virtual_seq.sv"
+`include "can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv"
 
 
   `include "can_test/can_frame_dut_ack_virtual_seq_test.sv"
@@ -35,6 +36,7 @@ package can_pkg;
 `include "can_test/can_std_frame_rx_ack_virtual_seq_test.sv"
 `include "can_test/can_ext_frame_rx_ack_virtual_seq_test.sv"
   `include "can_test/can_frame_loopback_virtual_seq_test.sv"
+  `include "can_test/can_ext_frame_loopback_virtual_seq_test.sv"
 
 
 endpackage

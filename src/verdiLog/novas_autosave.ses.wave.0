@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 300175.000000
-cursor 0.000000
+zoom 0.000000 270543.650000
+cursor 2075.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 7
+markerPos 6
 
 ; event list
 ; addEvent event_name event_expression
@@ -49,7 +49,6 @@ addGroup "G1"
 activeDirFile "" "/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/waveform.fsdb"
 addSignal -h 15 /top/can_vif/can_bus
 addSignal -h 15 -holdScope can_clk
-addSignal -h 15 -holdScope can_irq
 addSignal -h 15 -holdScope can_resetn
 addSignal -h 15 -holdScope can_rx
 addSignal -h 15 -holdScope can_tx
@@ -64,6 +63,7 @@ GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
 
 "/top"
+"/top/can_vif"
 
 SCOPE_LIST_BEGIN
 "/top"

@@ -86,7 +86,7 @@ VCS compile option:
  option[1]: -ucli
  option[2]: -i
  option[3]: wave.tcl
- option[4]: +UVM_TESTNAME=can_ext_frame_rx_ack_virtual_seq_test
+ option[4]: +UVM_TESTNAME=can_ext_frame_loopback_virtual_seq_test
  option[5]: /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/bin/vcs1
  option[6]: -Mcc=gcc
  option[7]: -Mcplusplus=g++
@@ -114,29 +114,30 @@ VCS compile option:
  option[29]: /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv
  option[30]: +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi
  option[31]: /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv
- option[32]: -Xvcs_run_simv=1
- option[33]: -V
- option[34]: -full64
- option[35]: -ntb_opts
- option[36]: uvm-1.2
- option[37]: +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/
- option[38]: +v2k
- option[39]: -debug_access+all
- option[40]: +vpi
- option[41]: +vcsd1
- option[42]: +itf+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcsdp_lite.tab
- option[43]: -picarchive
- option[44]: -P
- option[45]: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab
- option[46]: -fsdb
- option[47]: -sverilog
- option[48]: -gen_obj
- option[49]: +incdir+apb
- option[50]: +incdir+can
- option[51]: +incdir+apb/can_ral_sequence
- option[52]: can/can_top.sv
- option[53]: -load
- option[54]: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
+ option[32]: -V
+ option[33]: -full64
+ option[34]: -ntb_opts
+ option[35]: uvm-1.2
+ option[36]: +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/
+ option[37]: +v2k
+ option[38]: -debug_access+all
+ option[39]: +vpi
+ option[40]: +vcsd1
+ option[41]: +itf+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcsdp_lite.tab
+ option[42]: -kdb
+ option[43]: -Xufe=2steps
+ option[44]: -picarchive
+ option[45]: -P
+ option[46]: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab
+ option[47]: -fsdb
+ option[48]: -sverilog
+ option[49]: -gen_obj
+ option[50]: +incdir+apb
+ option[51]: +incdir+can
+ option[52]: +incdir+apb/can_ral_sequence
+ option[53]: can/can_top.sv
+ option[54]: -load
+ option[55]: /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
 Chronologic Simulation VCS Release Q-2020.03-SP2-8_Full64
 Linux 3.10.0-1160.114.2.el7.x86_64 #1 SMP Wed Mar 20 15:54:52 UTC 2024 x86_64
 CPU cores: 256
@@ -156,41 +157,62 @@ maxproc		4096
 (Special)Runtime environment variables:
 
 Runtime environment variables:
-XDG_SESSION_ID=107614
+REMOTEHOST=106.51.38.11
+VNCDESKTOP=feserver.mirafra.com:5 (sinchanabr)
+SSH_AGENT_PID=140979
+XDG_SESSION_ID=73529
 HOSTNAME=feserver.mirafra.com
-TERM=xterm
+GLADE_PIXMAP_PATH=:
+TERM=xterm-256color
 SHELL=/bin/bash
+XDG_MENU_PREFIX=xfce-
+VTE_VERSION=5204
+HOST=feserver.mirafra.com
 HISTSIZE=1000
-SSH_CLIENT=223.185.133.13 14332 22
+SSH_CLIENT=106.51.38.11 64766 22
+WINDOWID=41943043
 QTDIR=/usr/lib64/qt-3.3
-OLDPWD=/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification
 QTINC=/usr/lib64/qt-3.3/include
-SSH_TTY=/dev/pts/562
+SSH_TTY=/dev/pts/234
 QT_GRAPHICSSYSTEM_CHECKED=1
 USER=sinchanabr
-LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+GROUP=sinchanabr
+MTI_HOME=/tools/mentor/questasim/questasim/
+LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
+LD_LIBRARY_PATH=/tools/mentor/questasim/questasim
+GLADE_MODULE_PATH=:
+SSH_AUTH_SOCK=/tmp/ssh-8p9nsy7Cd8Zf/agent.140978
+HOSTTYPE=x86_64-linux
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/140967,unix/unix:/tmp/.ICE-unix/140967
+MGLS_HOME=/tools/mentor/questasim/questasim/linux/mgls
+XDG_CONFIG_DIRS=/etc/xdg
+PATH=/fetools/synopsys/installed_tools/vc_static/U-2023.03-1/bin:/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/bin:/fetools/synopsys/installed_tools/spyglass/S-2021.09-SP1/SPYGLASS_HOME/bin:/fetools/synopsys/installed_tools/syn/S-2021.06-SP4/bin:/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/bin:/fetools/synopsys/installed_tools/Formality/fm/S-2021.06-SP2/bin:/fetools/synopsys/installed_tools/primetime/prime/S-2021.06-SP2/bin:/fetools/synopsys/installed_tools/icc2/Q-2019.12-SP1/bin:/fetools/synopsys/installed_tools/vc_static/U-2023.03-1/bin:/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/bin:/fetools/synopsys/installed_tools/spyglass/S-2021.09-SP1/SPYGLASS_HOME/bin:/fetools/synopsys/installed_tools/syn/S-2021.06-SP4/bin:/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/bin:/fetools/synopsys/installed_tools/Formality/fm/S-2021.06-SP2/bin:/fetools/synopsys/installed_tools/primetime/prime/S-2021.06-SP2/bin:/fetools/synopsys/installed_tools/icc2/Q-2019.12-SP1/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/sinchanabr/bin/tools/mentor/questasim/questasim/linux/mgls/bin:/tools/mentor/questasim/questasim/bin:/tools/mentor/questacdc/linux/bin:/tools/AP_18.1.rel.1/bin/rhel6-64/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 MAIL=/var/spool/mail/sinchanabr
-PATH=/fetools/synopsys/installed_tools/vc_static/U-2023.03-1/bin:/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/bin:/fetools/synopsys/installed_tools/spyglass/S-2021.09-SP1/SPYGLASS_HOME/bin:/fetools/synopsys/installed_tools/syn/S-2021.06-SP4/bin:/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/bin:/fetools/synopsys/installed_tools/Formality/fm/S-2021.06-SP2/bin:/fetools/synopsys/installed_tools/primetime/prime/S-2021.06-SP2/bin:/fetools/synopsys/installed_tools/icc2/Q-2019.12-SP1/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/sinchanabr/bin/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+DESKTOP_SESSION=xfce
 PWD=/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src
 LANG=en_US.UTF-8
-SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+LM_LICENSE_FILE=1717@192.168.1.2
 HISTCONTROL=ignoredups
-SHLVL=2
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 HOME=/home/sinchanabr
+HOME_0IN=/tools/mentor/questacdc/linux
+SHLVL=9
+OSTYPE=linux
+VENDOR=unknown
+MACHTYPE=x86_64
 LOGNAME=sinchanabr
 QTLIB=/usr/lib64/qt-3.3/lib
-XDG_DATA_DIRS=/home/sinchanabr/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
-SSH_CONNECTION=223.185.133.13 14332 192.168.1.16 22
+XDG_DATA_DIRS=/home/sinchanabr/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/usr/share
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wJ5tdNRqLW,guid=7cf93bd9180a626a5e13ba026a71a8e4
+SSH_CONNECTION=106.51.38.11 64766 192.168.1.16 22
 LESSOPEN=||/usr/bin/lesspipe.sh %s
+DISPLAY=:5.0
 XDG_RUNTIME_DIR=/run/user/6110
+GLADE_CATALOG_PATH=:
+XDG_CURRENT_DESKTOP=XFCE
+COLORTERM=truecolor
+OLDPWD=/fetools/work_area/frontend/Batch_10/sinchanabr/I3C_CONTROLLER_VERIFICATION_V2
 _=/bin/csh
-HOSTTYPE=x86_64-linux
-VENDOR=unknown
-OSTYPE=linux
-MACHTYPE=x86_64
-GROUP=sinchanabr
-HOST=feserver.mirafra.com
-REMOTEHOST=223.185.133.13
 ICC_HOME=/fetools/synopsys/installed_tools/icc2/Q-2019.12-SP1
 Prime_HOME=/fetools/synopsys/installed_tools/primetime/prime/S-2021.06-SP2
 FORMALITY=/fetools/synopsys/installed_tools/Formality/fm/S-2021.06-SP2
@@ -213,77 +235,77 @@ argv[0]=./simv
 argv[1]=-ucli
 argv[2]=-i
 argv[3]=wave.tcl
-argv[4]=+UVM_TESTNAME=can_ext_frame_rx_ack_virtual_seq_test
-216 profile - 100
-          CPU/Mem usage: 0.200 sys,  0.440 user,  417.49M mem
-217 Elapsed time:    0:00:03    Fri Nov 20 15:43:58 2026
-218 pliAppInit
-219 FSDB_GATE is set.
-220 FSDB_RTL is set.
-221 FSDB_RTL is set.
-222 FSDB_FIELDTYPE is set.
-223 Enable Parallel Dumping.
-224 pliAppMiscSet: New Sim Round
-225 pliEntryInit
-226 LIBSSCORE=found /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/lib/LINUXAMD64/libsscore_vcs202003.so through $NOVAS_HOME setting.
-227 FSDB Dumper for VCS, Release Verdi_Q-2020.03-SP2-8, Linux x86_64/64bit, 08/31/2021
-228 (C) 1996 - 2021 by Synopsys, Inc.
-229 sps_tcl_fsdbDumpfile_main at 0
-230 argv[0]: waveform.fsdb
-231 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-232 *Verdi* : Create FSDB file 'waveform.fsdb'
-233 compile option from '/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/simv.daidir/vcs_rebuild'.
-234   "vcs '-V' '-R' '-full64' '-sverilog' '-ntb_opts' 'uvm-1.2' '+v2k' '-debug_access+all' '-l' 'fell.log' '+incdir+apb' '+incdir+can' '+incdir+apb/can_ral_sequence' 'can/can_top.sv' 2>&1"
-235 DVDI_is_vir_unload_enabled is enable
-236 FSDB_VCS_ENABLE_NATIVE_VC is enable
-237 sps_tcl_fsdbDumpvars_vd_main
-238 argv[0]: 0
-239 argv[1]: top
-240 argv[2]: +fsdbfile+waveform.fsdb
-241 [spi_vcs_vd_ppi_create_root]: no upf option
-242 FSDB dumper cannot dump UPF related power signal ($power_tree): no ppiPowerNetwork.
-243 Power dumping is enabled and VIR_REDUCTION may not work.
-244 *Verdi* : Begin traversing the scope (top), layer (0).
-245 *Verdi* : End of traversing.
-246 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.230 sys,  0.510 user,  518.35M mem
-                   incr: 0.010 sys,  0.010 user,  8.61M mem
-                   accu: 0.010 sys,  0.010 user,  8.61M mem
-              accu incr: 0.010 sys,  0.010 user,  8.61M mem
+argv[4]=+UVM_TESTNAME=can_ext_frame_loopback_virtual_seq_test
+238 profile - 100
+          CPU/Mem usage: 0.230 sys,  0.460 user,  417.91M mem
+239 Elapsed time:    0:00:03    Wed Nov 25 14:51:30 2026
+240 pliAppInit
+241 FSDB_GATE is set.
+242 FSDB_RTL is set.
+243 FSDB_RTL is set.
+244 FSDB_FIELDTYPE is set.
+245 Enable Parallel Dumping.
+246 pliAppMiscSet: New Sim Round
+247 pliEntryInit
+248 LIBSSCORE=found /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/lib/LINUXAMD64/libsscore_vcs202003.so through $NOVAS_HOME setting.
+249 FSDB Dumper for VCS, Release Verdi_Q-2020.03-SP2-8, Linux x86_64/64bit, 08/31/2021
+250 (C) 1996 - 2021 by Synopsys, Inc.
+251 sps_tcl_fsdbDumpfile_main at 0
+252 argv[0]: waveform.fsdb
+253 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+254 *Verdi* : Create FSDB file 'waveform.fsdb'
+255 compile option from '/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/simv.daidir/vcs_rebuild'.
+256   "vcs '-V' '-full64' '-sverilog' '-ntb_opts' 'uvm-1.2' '+v2k' '-debug_access+all' '-kdb' '-l' 'fell.log' '+incdir+apb' '+incdir+can' '+incdir+apb/can_ral_sequence' 'can/can_top.sv' 2>&1"
+257 DVDI_is_vir_unload_enabled is enable
+258 FSDB_VCS_ENABLE_NATIVE_VC is enable
+259 sps_tcl_fsdbDumpvars_vd_main
+260 argv[0]: 0
+261 argv[1]: top
+262 argv[2]: +fsdbfile+waveform.fsdb
+263 [spi_vcs_vd_ppi_create_root]: no upf option
+264 FSDB dumper cannot dump UPF related power signal ($power_tree): no ppiPowerNetwork.
+265 Power dumping is enabled and VIR_REDUCTION may not work.
+266 *Verdi* : Begin traversing the scope (top), layer (0).
+267 *Verdi* : End of traversing.
+268 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.270 sys,  0.530 user,  518.72M mem
+                   incr: 0.010 sys,  0.020 user,  8.56M mem
+                   accu: 0.010 sys,  0.020 user,  8.56M mem
+              accu incr: 0.010 sys,  0.020 user,  8.56M mem
 
           Count usage: 950 var,  579 idcode,  304 callback
                  incr: 950 var,  579 idcode,  304 callback
                  accu: 950 var,  579 idcode,  304 callback
             accu incr: 950 var,  579 idcode,  304 callback
-247 Elapsed time:    0:00:03    Fri Nov 20 15:43:58 2026
-248 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.230 sys,  0.510 user,  519.41M mem
+269 Elapsed time:    0:00:03    Wed Nov 25 14:51:30 2026
+270 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.270 sys,  0.530 user,  519.77M mem
                    incr: 0.000 sys,  0.000 user,  1.05M mem
-                   accu: 0.010 sys,  0.010 user,  9.66M mem
+                   accu: 0.010 sys,  0.020 user,  9.61M mem
               accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
           Count usage: 950 var,  579 idcode,  304 callback
                  incr: 0 var,  0 idcode,  0 callback
                  accu: 950 var,  579 idcode,  304 callback
             accu incr: 0 var,  0 idcode,  0 callback
-249 Elapsed time:    0:00:03    Fri Nov 20 15:43:58 2026
-250 sps_tcl_fsdbDumpflush_vd_main
-251 *Verdi* : Flush all FSDB Files at 0 s.
-252 End of simulation at 300175
-253 Elapsed time:    0:00:10    Fri Nov 20 15:44:05 2026
-254 Begin FSDB profile info:
-255 FSDB Writer : bc1(336326) bcn(168417) mtf/stf(0/1)
-FSDB Writer elapsed time : flush(0.026924) io wait(0.000000) theadpool wait(0.000000)
+271 Elapsed time:    0:00:03    Wed Nov 25 14:51:30 2026
+272 sps_tcl_fsdbDumpflush_vd_main
+273 *Verdi* : Flush all FSDB Files at 0 s.
+274 End of simulation at 267865
+275 Elapsed time:    0:00:03    Wed Nov 25 14:51:30 2026
+276 Begin FSDB profile info:
+277 FSDB Writer : bc1(138805) bcn(12811) mtf/stf(0/1)
+FSDB Writer elapsed time : flush(0.012504) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
-256 End FSDB profile info
-257 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-258                      - BlockUsed:5 Acquire:564474 BufferUsed:6678726
-259                      - Flush:4 Expand:0 ProducerWait:0 ConsumerWait:3
-260                      - MainProducerTime:6.771801301 TotalConsumerTime:0.038838758
-261                      - ElapsedTime:6.859501000
-262 Producer   0 profile - BlockUsed:5 Acquire:564474 BufferUsed:6678726
-263 Consumer   0 profile - Affinity:-1 CPUTime:0.038838758 LifeTime:4.193933236 (0.01%)
-264                      - BlockUsed:5 Acquire:564474 BufferUsed:6678726
-265 SimExit
-266 Elapsed time:    0:00:10    Fri Nov 20 15:44:05 2026
-267 Sim process exit
+278 End FSDB profile info
+279 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+280                      - BlockUsed:3 Acquire:204885 BufferUsed:2308316
+281                      - Flush:4 Expand:0 ProducerWait:0 ConsumerWait:1
+282                      - MainProducerTime:1.119234232 TotalConsumerTime:0.011628075
+283                      - ElapsedTime:0.553599000
+284 Producer   0 profile - BlockUsed:3 Acquire:204885 BufferUsed:2308316
+285 Consumer   0 profile - Affinity:-1 CPUTime:0.011628075 LifeTime:0.140204135 (0.08%)
+286                      - BlockUsed:3 Acquire:204885 BufferUsed:2308316
+287 SimExit
+288 Elapsed time:    0:00:03    Wed Nov 25 14:51:30 2026
+289 Sim process exit

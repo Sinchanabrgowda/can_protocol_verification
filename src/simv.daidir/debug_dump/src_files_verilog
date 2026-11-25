@@ -197,6 +197,7 @@
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/apb/can_ral_sequence/can_std_rx_basic_seq.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/apb/can_ral_sequence/can_tx_basic_loopback_seq.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/apb/can_ral_sequence/can_tx_basic_seq.sv
+/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/apb/can_ral_sequence/can_tx_ext_loopback_seq.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/apb/can_reg_block.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/apb/can_reg_class.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_active_monitor.sv
@@ -217,6 +218,7 @@
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_sequences/can_ext_frame_ack_seq.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_subscriber.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_test/can_ext_frame_dut_ack_virtual_seq_test.sv
+/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_test/can_ext_frame_loopback_virtual_seq_test.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_test/can_ext_frame_rx_ack_virtual_seq_test.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_test/can_frame_dut_ack_virtual_seq_test.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_test/can_frame_loopback_virtual_seq_test.sv
@@ -225,6 +227,7 @@
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_top.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_virtual_sequencer.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_virtual_sequences/can_ext_frame_dut_ack_virtual_seq.sv
+/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_virtual_sequences/can_ext_frame_rx_ack_virtual_seq.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv
 /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_virtual_sequences/can_frame_loopback_virtual_seq.sv

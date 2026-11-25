@@ -26,12 +26,15 @@ fdb_campaign =
 fdb_tool = 
 [hb]
 postSimFile = /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/waveform.fsdb
-syncTime = 0
-viewport = 0 31 1920 971 0 0 219 886
+syncTime = 2075
+viewport = 0 31 1920 971 0 0 365 1918
+activeNode = "top"
+activeScope = "top"
+activeFile = "can/can_top.sv"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 0
+sourceBeginLine = 40
 baMode = False
 srcLineNum = True
 AutoWrap = True
@@ -49,8 +52,17 @@ traceIncTopPort = False
 leadingZero = False
 signalPane = False
 SourceVerticalScrollLines = 1
+Scope1 = "top"
+multipleSelection = 1 40 2 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
+[hb.design]
+importCmd = "-dbdir" "/fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/simv.daidir" 
+invokeDir = /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src
+[hb.sourceTab.1]
+scope = top
+File = /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/can/can_top.sv
+Line = 41
 [nMemoryManager]
 WaveformFile = /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/waveform.fsdb
 UserActionNum = 0
