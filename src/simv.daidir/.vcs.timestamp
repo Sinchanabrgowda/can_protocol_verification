@@ -1,4 +1,4 @@
-867      
+890      
 0 uvm_macros.svh
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/uvm_macros.svh
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_macros.svh
@@ -692,6 +692,11 @@
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/can_ral_sequence/can_tx_ext_loopback_seq.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/can_ral_sequence/can_tx_ext_loopback_seq.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/can_ral_sequence/can_tx_ext_loopback_seq.sv
+0 can_ral_sequence/can_tx_arb_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/can_ral_sequence/can_tx_arb_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/can_ral_sequence/can_tx_arb_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/can_ral_sequence/can_tx_arb_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/can_ral_sequence/can_tx_arb_seq.sv
 0 can_defines.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/can_defines.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/can_defines.sv
@@ -794,6 +799,12 @@
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/can_sequences/can_drive_ext_frame.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/can_sequences/can_drive_ext_frame.sv
 0 apb/can_sequences/can_drive_ext_frame.sv
+0 can_sequences/can_tx_to_dut_arb_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/can_sequences/can_tx_to_dut_arb_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/can_sequences/can_tx_to_dut_arb_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/can_sequences/can_tx_to_dut_arb_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/can_sequences/can_tx_to_dut_arb_seq.sv
+0 apb/can_sequences/can_tx_to_dut_arb_seq.sv
 0 can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv
@@ -830,6 +841,12 @@
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv
 0 apb/can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv
+0 can_virtual_sequences/can_frame_arb_virtual_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/can_virtual_sequences/can_frame_arb_virtual_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/can_virtual_sequences/can_frame_arb_virtual_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/can_virtual_sequences/can_frame_arb_virtual_seq.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/can_virtual_sequences/can_frame_arb_virtual_seq.sv
+0 apb/can_virtual_sequences/can_frame_arb_virtual_seq.sv
 0 can_test/can_frame_dut_ack_virtual_seq_test.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/can_test/can_frame_dut_ack_virtual_seq_test.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/can_test/can_frame_dut_ack_virtual_seq_test.sv
@@ -866,7 +883,13 @@
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/can_test/can_ext_frame_loopback_virtual_seq_test.sv
 0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/can_test/can_ext_frame_loopback_virtual_seq_test.sv
 0 apb/can_test/can_ext_frame_loopback_virtual_seq_test.sv
-49
+0 can_test/can_frame_arb_virtual_seq_test.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/systemverilog/can_test/can_frame_arb_virtual_seq_test.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/can_test/can_frame_arb_virtual_seq_test.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/can_test/can_frame_arb_virtual_seq_test.sv
+0 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/can_test/can_frame_arb_virtual_seq_test.sv
+0 apb/can_test/can_frame_arb_virtual_seq_test.sv
+48
 +define+UVM_VCS_RECORD
 +define+UVM_VERDI_VIF_RECORD
 +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/
@@ -898,12 +921,11 @@
 -Mxllcflags=
 -P
 -V
--Xufe=2steps
+-Xvcs_run_simv=1
 -debug_access+all
 -fsdb
 -full64
 -gen_obj
--kdb
 -l
 -ntb_opts
 -picarchive
@@ -916,15 +938,10 @@ fell.log
 uvm-1.2
 /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab
 can/can_top.sv
-59
-XDG_SESSION_ID=73529
+41
+XDG_SESSION_ID=110846
 XDG_RUNTIME_DIR=/run/user/6110
-XDG_MENU_PREFIX=xfce-
-XDG_DATA_DIRS=/home/sinchanabr/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/usr/share
-XDG_CURRENT_DESKTOP=XFCE
-XDG_CONFIG_DIRS=/etc/xdg
-VTE_VERSION=5204
-VNCDESKTOP=feserver.mirafra.com:5 (sinchanabr)
+XDG_DATA_DIRS=/home/sinchanabr/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VMR_MODE_FLAG=64
 VERDI_HOME=/fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8
 VENDOR=unknown
@@ -939,16 +956,12 @@ VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64
-SSH_TTY=/dev/pts/234
-SSH_CONNECTION=106.51.38.11 64766 192.168.1.16 22
-SSH_CLIENT=106.51.38.11 64766 22
-SSH_AUTH_SOCK=/tmp/ssh-8p9nsy7Cd8Zf/agent.140978
+SSH_TTY=/dev/pts/559
+SSH_CONNECTION=106.51.38.11 57298 192.168.1.16 22
+SSH_CLIENT=106.51.38.11 57298 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
-SSH_AGENT_PID=140979
 SPYGLASS_HOME=/fetools/synopsys/installed_tools/spyglass/S-2021.09-SP1/SPYGLASS_HOME
-SNPS_VERDI_INTERNAL_LP_XML_NEW_FLOW=1
 SNPSLMD_QUEUE=true
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/140967,unix/unix:/tmp/.ICE-unix/140967
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 REMOTEHOST=106.51.38.11
@@ -959,37 +972,31 @@ QTDIR=/usr/lib64/qt-3.3
 Prime_HOME=/fetools/synopsys/installed_tools/primetime/prime/S-2021.06-SP2
 OVA_UUM=0
 OSTYPE=linux
-MTI_HOME=/tools/mentor/questasim/questasim/
-MGLS_HOME=/tools/mentor/questasim/questasim/linux/mgls
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 LC_ALL=C
 ICC_HOME=/fetools/synopsys/installed_tools/icc2/Q-2019.12-SP1
 HOSTTYPE=x86_64-linux
-HOME_0IN=/tools/mentor/questacdc/linux
 HISTCONTROL=ignoredups
 GROUP=sinchanabr
-GLADE_PIXMAP_PATH=:
-GLADE_MODULE_PATH=:
-GLADE_CATALOG_PATH=:
 FORMALITY=/fetools/synopsys/installed_tools/Formality/fm/S-2021.06-SP2
-DESKTOP_SESSION=xfce
 DC_HOME=/fetools/synopsys/installed_tools/syn/S-2021.06-SP4
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wJ5tdNRqLW,guid=7cf93bd9180a626a5e13ba026a71a8e4
-COLORTERM=truecolor
 0
-237
+241
+1795683128 can/can_test/can_frame_arb_virtual_seq_test.sv
 1795596544 can/can_test/can_ext_frame_loopback_virtual_seq_test.sv
 1795515831 can/can_test/can_frame_loopback_virtual_seq_test.sv
 1795167484 can/can_test/can_ext_frame_rx_ack_virtual_seq_test.sv
 1794908527 can/can_test/can_std_frame_rx_ack_virtual_seq_test.sv
 1794905716 can/can_test/can_ext_frame_dut_ack_virtual_seq_test.sv
 1794569953 can/can_test/can_frame_dut_ack_virtual_seq_test.sv
+1795676272 can/can_virtual_sequences/can_frame_arb_virtual_seq.sv
 1795596512 can/can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv
 1795513157 can/can_virtual_sequences/can_frame_loopback_virtual_seq.sv
 1795167182 can/can_virtual_sequences/can_ext_frame_rx_ack_virtual_seq.sv
 1794909357 can/can_virtual_sequences/can_std_frame_rx_ack_virtual_seq.sv
 1794905534 can/can_virtual_sequences/can_ext_frame_dut_ack_virtual_seq.sv
 1793613684 can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv
+1795602502 can/can_sequences/can_tx_to_dut_arb_seq.sv
 1795510094 can/can_sequences/can_drive_ext_frame.sv
 1793613077 can/can_sequences/can_drive_basic_frame.sv
 1794904654 can/can_sequences/can_ext_frame_ack_seq.sv
@@ -1000,14 +1007,15 @@ COLORTERM=truecolor
 1795515801 can/can_scoreboard.sv
 1793614947 can/can_subscriber.sv
 1794999146 can/can_agent.sv
-1794998142 can/can_passive_monitor.sv
+1795683680 can/can_passive_monitor.sv
 1794997456 can/can_active_monitor.sv
 1794995670 can/can_driver.sv
 1793612783 can/can_sequencer.sv
 1794568519 can/can_sequence_item.sv
 1794567961 can/can_timing_config.sv
 1794568508 can/can_defines.sv
-1795596584 can/can_pkg.sv
+1795676331 can/can_pkg.sv
+1795602418 apb/can_ral_sequence/can_tx_arb_seq.sv
 1795597089 apb/can_ral_sequence/can_tx_ext_loopback_seq.sv
 1795516339 apb/can_ral_sequence/can_tx_basic_loopback_seq.sv
 1795510048 apb/can_ral_sequence/can_ext_rx_basic_seq.sv
@@ -1023,7 +1031,7 @@ COLORTERM=truecolor
 1794566967 apb/apb_active_monitor.sv
 1794984330 apb/apb_driver.sv
 1793611897 apb/apb_sequence_item.sv
-1795596612 apb/apb_pkg.sv
+1795602454 apb/apb_pkg.sv
 1793612962 can/can_interface.sv
 1794479981 apb/apb_interface.sv
 1794481558 ../rtl/top/can_top.v
@@ -1208,7 +1216,7 @@ COLORTERM=truecolor
 1631418287 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_global_defines.svh
 1631418287 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_version_defines.svh
 1631418288 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh
-1795596685 can/can_top.sv
+1795684089 can/can_top.sv
 1631418287 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv
 1631418287 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv
 1631418287 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv
@@ -1222,5 +1230,5 @@ COLORTERM=truecolor
 1631416743 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/liberrorinf.so
 1631416702 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libsnpsmalloc.so
 1631416739 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/libvfs.so
-1795598480 simv.daidir
+1795684120 simv.daidir
 -1 partitionlib

@@ -9,6 +9,7 @@ class can_passive_monitor extends uvm_monitor;
   bit previous_bit;
   int unsigned same_count;
   bit frame_valid;
+ bit enable_monitor;
 
   function new(string name = "can_passive_monitor", uvm_component parent = null);
     super.new(name, parent);
@@ -23,6 +24,10 @@ class can_passive_monitor extends uvm_monitor;
 
     if (!uvm_config_db#(can_timing_config)::get( this, "", "timing_cfg", timing_cfg))
       `uvm_fatal("CAN_PASS_MON", "CAN timing configuration not found")
+
+if (!uvm_config_db#(bit)::get(
+        this, "", "enable_monitor", enable_monitor))
+    enable_monitor = 0;
   endfunction
 
   task wait_clocks(int unsigned count);
@@ -30,27 +35,6 @@ class can_passive_monitor extends uvm_monitor;
       @(posedge vif.can_clk);
   endtask
 /*
-  task wait_for_sof(output bit sof);
-    sof = 1'b1;
-
-    wait (vif.can_bus === 1'b1);
-    @(negedge vif.can_bus);
-@(negedge vif.can_bus);
-
-`uvm_info("CAN_DIRECTION",
-  $sformatf("can_tx=%0b ext_tx=%0b can_bus=%0b",
-  vif.can_tx, vif.ext_tx, vif.can_bus), UVM_LOW)
-
-    wait_clocks(timing_cfg.sample_point_cycles);
-    sof = vif.can_bus;
-
-    if (sof !== 1'b0) begin
-      frame_valid = 0;
-      `uvm_error("CAN_PASS_MON", "Invalid SOF")
-    end
-  endtask
-*/
-
 task wait_for_sof(output bit sof);
   sof = 1'b1;
 
@@ -66,6 +50,31 @@ task wait_for_sof(output bit sof);
         return;
     end
   end
+endtask
+*/
+
+task wait_for_sof(output bit sof);
+
+  sof = 1'b1;
+
+  forever begin
+    // Wait until the bus is recessive
+    wait (vif.can_bus === 1'b1);
+
+    // Detect the falling edge indicating SOF
+    @(negedge vif.can_bus);
+
+    // Sample at the configured sample point
+    wait_clocks(timing_cfg.sample_point_cycles);
+
+    sof = vif.can_bus;
+
+    if (sof === 1'b0) begin
+      `uvm_info("CAN_PASS_MON", "SOF detected", UVM_LOW)
+      return;
+    end
+  end
+
 endtask
 
   task sample_raw_bit(output bit value);
@@ -274,6 +283,15 @@ endtask
 
   task run_phase(uvm_phase phase);
 `uvm_info("CAN_PASS_MON", "Passive monitor run_phase started", UVM_LOW)
+/*
+if (!enable_monitor) begin
+    `uvm_info("CAN_PASS_MON",
+              "Passive monitor disabled",
+              UVM_LOW)
+    return;
+  end
+*/
+
 if (timing_cfg.operation == DRIVE_FRAME) begin
     `uvm_info("CAN_PASS_MON",
               "Passive monitor disabled for DRIVE_FRAME",

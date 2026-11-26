@@ -1,4 +1,4 @@
-Command: vcs -V -full64 -sverilog -ntb_opts uvm-1.2 +v2k -debug_access+all -kdb -l \
+Command: vcs -V -R -full64 -sverilog -ntb_opts uvm-1.2 +v2k -debug_access+all -l \
 fell.log +incdir+apb +incdir+can +incdir+apb/can_ral_sequence can/can_top.sv
 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/bin/vcs1 -Mcc=gcc \
 -Mcplusplus=g++ -Masflags= -Mcfl= -pipe -DVCSMX -DUVM_DPI_DO_TYPE_CHECK -fPIC -O \
@@ -17,13 +17,13 @@ fell.log +incdir+apb +incdir+can +incdir+apb/can_ral_sequence can/can_top.sv
 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv \
 +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi \
 /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv \
--V -full64 -ntb_opts uvm-1.2 +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/ \
+-Xvcs_run_simv=1 -V -full64 -ntb_opts uvm-1.2 +incdir+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/ \
 +v2k -debug_access+all +vpi +vcsd1 +itf+/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcsdp_lite.tab \
--kdb -Xufe=2steps -picarchive -P /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab \
+-picarchive -P /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/verdi.tab \
 -fsdb -sverilog -gen_obj +incdir+apb +incdir+can +incdir+apb/can_ral_sequence can/can_top.sv \
 
                          Chronologic VCS (TM)
-      Version Q-2020.03-SP2-8_Full64 -- Wed Nov 25 14:50:55 2026
+      Version Q-2020.03-SP2-8_Full64 -- Thu Nov 26 14:38:15 2026
                Copyright (c) 1991-2020 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -336,6 +336,8 @@ Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-
 Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_recorder.svh'.
 Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv'.
 Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_record_interface.sv'.
+Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/macros/uvm_global_defines.svh'.
+Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_vcs_record_interface.sv'.
 Back to file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/vcs/uvm_custom_install_vcs_recorder.sv'.
 Parsing design file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/verdi/uvm_custom_install_verdi_recorder.sv'
 Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
@@ -447,6 +449,8 @@ Parsing included file 'apb/can_ral_sequence/can_tx_basic_loopback_seq.sv'.
 Back to file 'apb/apb_pkg.sv'.
 Parsing included file 'apb/can_ral_sequence/can_tx_ext_loopback_seq.sv'.
 Back to file 'apb/apb_pkg.sv'.
+Parsing included file 'apb/can_ral_sequence/can_tx_arb_seq.sv'.
+Back to file 'apb/apb_pkg.sv'.
 Back to file 'can/can_top.sv'.
 Parsing included file 'can/can_pkg.sv'.
 Parsing included file '/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/uvm_macros.svh'.
@@ -485,6 +489,8 @@ Parsing included file 'can/can_sequences/can_drive_basic_frame.sv'.
 Back to file 'can/can_pkg.sv'.
 Parsing included file 'can/can_sequences/can_drive_ext_frame.sv'.
 Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_sequences/can_tx_to_dut_arb_seq.sv'.
+Back to file 'can/can_pkg.sv'.
 Parsing included file 'can/can_virtual_sequences/can_frame_dut_ack_virtual_seq.sv'.
 Back to file 'can/can_pkg.sv'.
 Parsing included file 'can/can_virtual_sequences/can_ext_frame_dut_ack_virtual_seq.sv'.
@@ -496,6 +502,8 @@ Back to file 'can/can_pkg.sv'.
 Parsing included file 'can/can_virtual_sequences/can_frame_loopback_virtual_seq.sv'.
 Back to file 'can/can_pkg.sv'.
 Parsing included file 'can/can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv'.
+Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_virtual_sequences/can_frame_arb_virtual_seq.sv'.
 Back to file 'can/can_pkg.sv'.
 Parsing included file 'can/can_test/can_frame_dut_ack_virtual_seq_test.sv'.
 Back to file 'can/can_pkg.sv'.
@@ -509,6 +517,8 @@ Parsing included file 'can/can_test/can_frame_loopback_virtual_seq_test.sv'.
 Back to file 'can/can_pkg.sv'.
 Parsing included file 'can/can_test/can_ext_frame_loopback_virtual_seq_test.sv'.
 Back to file 'can/can_pkg.sv'.
+Parsing included file 'can/can_test/can_frame_arb_virtual_seq_test.sv'.
+Back to file 'can/can_pkg.sv'.
 Back to file 'can/can_top.sv'.
 Top Level Modules:
        uvm_custom_install_recording
@@ -519,8 +529,10 @@ Starting vcs inline pass...
 
 16 modules and 0 UDP read.
 recompiling module uvm_custom_install_verdi_recording
-	However, due to incremental compilation, only 1 module needs to be compiled. 
-( cd csrc ; make -f Makefile SNPS_VCS_TMPDIR=/tmp/vcs_20261125092054_165849 product \
+recompiling module top
+Both modules done.
+	However, due to incremental compilation, only 2 modules need to be compiled. 
+( cd csrc ; make -f Makefile SNPS_VCS_TMPDIR=/tmp/vcs_20261126090813_246946 product \
 )
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 ld -shared  -Bsymbolic   -o .//../simv.daidir//_cuarc0.so objs/amcQw_d.o 
@@ -529,7 +541,7 @@ if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib \
 -L/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib  -Wl,-rpath-link=./ \
-/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _166352_archive_1.so _prev_archive_1.so \
+/usr/lib64/libnuma.so.1 uvm_dpi.o uvm_verdi_dpi.o     _247457_archive_1.so _prev_archive_1.so \
 _cuarc0.so  SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o \
 rmar_llvm_0_0.o          -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile \
 -luclinative /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/linux64/lib/vcs_tls.o \
@@ -538,5 +550,685 @@ _vcs_pli_stub_.o   /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/lin
 /fetools/synopsys/installed_tools/verdi/verdi/Q-2020.03-SP2-8/share/PLI/VCS/LINUX64/pli.a \
 -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
-CPU time: 21.024 seconds to compile + .564 seconds to elab + 1.109 seconds to link
-Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+Running simv -V +v2k -a fell.log 
+Command: /fetools/work_area/frontend/Batch_10/sinchanabr/can_protocol_verification/src/./simv -V +v2k -a fell.log
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version Q-2020.03-SP2-8_Full64; Runtime version Q-2020.03-SP2-8_Full64;  Nov 26 14:38 2026
+VCS Build Date = Sep 11 2021 20:22:52
+Start run at Nov 26 14:38 2026
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh(402) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2.Synopsys
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test can_ext_frame_loopback_virtual_seq_test...
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean internal_loopback
+UVM_INFO can/can_passive_monitor.sv(285) @ 0: uvm_test_top.can_e.can_agt.passive_monitor [CAN_PASS_MON] Passive monitor run_phase started
+UVM_INFO can/can_passive_monitor.sv(296) @ 0: uvm_test_top.can_e.can_agt.passive_monitor [CAN_PASS_MON] Passive monitor disabled for DRIVE_FRAME
+UVM_INFO can/can_test/can_ext_frame_loopback_virtual_seq_test.sv(28) @ 0: uvm_test_top [TEST] Starting virtual sequence
+UVM_INFO can/can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv(23) @ 0: uvm_test_top.can_e.virtual_seqr@@v_seq_lb_ex [VSEQ] Starting APB RAL sequence
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(26) @ 0: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Disabling CAN controller
+UVM_INFO apb/apb_driver.sv(31) @ 0: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 25: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(34) @ 25: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Configuring BRPR
+UVM_INFO apb/apb_driver.sv(31) @ 25: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 55: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(41) @ 55: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Configuring BTR
+UVM_INFO apb/apb_driver.sv(31) @ 55: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 85: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(49) @ 85: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Enabling internal loopback mode
+UVM_INFO apb/apb_driver.sv(31) @ 85: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 145: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(63) @ 145: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Enabling CAN controller
+UVM_INFO apb/apb_driver.sv(31) @ 145: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 205: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(72) @ 205: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] CAN Status after enable = 48000012
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(79) @ 205: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Writing TX_ID
+UVM_INFO apb/apb_driver.sv(31) @ 205: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(86) @ 235: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Writing TX_DLC
+UVM_INFO apb/apb_driver.sv(31) @ 235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 265: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(93) @ 265: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Writing TX_DW1
+UVM_INFO apb/apb_driver.sv(31) @ 265: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(100) @ 295: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Pushing frame into TX FIFO
+UVM_INFO apb/apb_driver.sv(31) @ 295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO can/can_scoreboard.sv(294) @ 325: uvm_test_top.can_e.can_scb [CAN_SB] Internal loopback: expected RX frame queued from TX registers
+UVM_INFO apb/apb_driver.sv(33) @ 325: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(107) @ 325: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Waiting for internal loopback reception
+UVM_INFO apb/apb_driver.sv(31) @ 325: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 1355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 1375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 2375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 2395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 3395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 3415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 4415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 4435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 5435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 5455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 6455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 6475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 7475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 7495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 8495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 8515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 9515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 9535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 10535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 10555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 11555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 11575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 12575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 12595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 13595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 13615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 14615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 14635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 15635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 15655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 16655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 16675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 17675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 17695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 18695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 18715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 19715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 19735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 20735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 20755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 21755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 21775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 22775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 22795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 23795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 23815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 24815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 24835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 25835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 25855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 26855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 26875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 27875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 27895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 28895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 28915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 29915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 29935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 30935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 30955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 31955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 31975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 32975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 32995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 33995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 34015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 35015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 35035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 36035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 36055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 37055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 37075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 38075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 38095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 39095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 39115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 40115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 40135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 41135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 41155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 42155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 42175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 43175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 43195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 44195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 44215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 45215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 45235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 46235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 46255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 47255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 47275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 48275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 48295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 49295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 49315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 50315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 50335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 51335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 51355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 52355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 52375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 53375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 53395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 54395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 54415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 55415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 55435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 56435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 56455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 57455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 57475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 58475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 58495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 59495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 59515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 60515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 60535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 61535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 61555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 62555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 62575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 63575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 63595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 64595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 64615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 65615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 65635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 66635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 66655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 67655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 67675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 68675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 68695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 69695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 69715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 70715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 70735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 71735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 71755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 72755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 72775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 73775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 73795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 74795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 74815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 75815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 75835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 76835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 76855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 77855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 77875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 78875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 78895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 79895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 79915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 80915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 80935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 81935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 81955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 82955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 82975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 83975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 83995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 84995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 85015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 86015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 86035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 87035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 87055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 88055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 88075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 89075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 89095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 90095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 90115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 91115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 91135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 92135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 92155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 93155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 93175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 94175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 94195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 95195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 95215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 96215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 96235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 97235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 97255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 98255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 98275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 99275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 99295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 100295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 100315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 101315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 101335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 102335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 102355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 103355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 103375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 104375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 104395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 105395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 105415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 106415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 106435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 107435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 107455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 108455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 108475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 109475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 109495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 110495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 110515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 111515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 111535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 112535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 112555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 113555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 113575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 114575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 114595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 115595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 115615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 116615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 116635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 117635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 117655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 118655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 118675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 119675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 119695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 120695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 120715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 121715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 121735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 122735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 122755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 123755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 123775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 124775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 124795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 125795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 125815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 126815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 126835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 127835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 127855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 128855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 128875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 129875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 129895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 130895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 130915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 131915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 131935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 132935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 132955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 133955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 133975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 134975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 134995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 135995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 136015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 137015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 137035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 138035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 138055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 139055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 139075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 140075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 140095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 141095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 141115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 142115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 142135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 143135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 143155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 144155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 144175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 145175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 145195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 146195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 146215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 147215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 147235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 148235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 148255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 149255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 149275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 150275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 150295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 151295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 151315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 152315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 152335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 153335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 153355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 154355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 154375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 155375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 155395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 156395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 156415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 157415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 157435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 158435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 158455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 159455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 159475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 160475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 160495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 161495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 161515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 162515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 162535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 163535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 163555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 164555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 164575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 165575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 165595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 166595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 166615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 167615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 167635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 168635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 168655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 169655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 169675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 170675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 170695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 171695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 171715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 172715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 172735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 173735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 173755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 174755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 174775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 175775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 175795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 176795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 176815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 177815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 177835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 178835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 178855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 179855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 179875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 180875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 180895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 181895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 181915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 182915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 182935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 183935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 183955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 184955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 184975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 185975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 185995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 186995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 187015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 188015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 188035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 189035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 189055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 190055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 190075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 191075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 191095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 192095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 192115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 193115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 193135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 194135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 194155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 195155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 195175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 196175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 196195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 197195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 197215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 198215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 198235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 199235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 199255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 200255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 200275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 201275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 201295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 202295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 202315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 203315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 203335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 204335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 204355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 205355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 205375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 206375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 206395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 207395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 207415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 208415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 208435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 209435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 209455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 210455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 210475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 211475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 211495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 212495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 212515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 213515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 213535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 214535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 214555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 215555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 215575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 216575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 216595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 217595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 217615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 218615: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 218635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 219635: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 219655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 220655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 220675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 221675: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 221695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 222695: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 222715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 223715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 223735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 224735: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 224755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 225755: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 225775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 226775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 226795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 227795: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 227815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 228815: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 228835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 229835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 229855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 230855: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 230875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 231875: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 231895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 232895: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 232915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 233915: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 233935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 234935: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 234955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 235955: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 235975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 236975: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 236995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 237995: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 238015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 239015: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 239035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 240035: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 240055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 241055: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 241075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 242075: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 242095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 243095: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 243115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 244115: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 244135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 245135: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 245155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 246155: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 246175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 247175: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 247195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 248195: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 248215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 249215: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 249235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+CRC COMPARE: time=249975 calculated=1300 received=1300 error=0
+UVM_INFO apb/apb_driver.sv(31) @ 250235: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 250255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 251255: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 251275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 252275: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 252295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 253295: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 253315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 254315: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 254335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 255335: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 255355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 256355: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 256375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 257375: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 257395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 258395: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 258415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 259415: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 259435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 260435: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 260455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 261455: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 261475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 262475: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 262495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 263495: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 263515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 264515: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 264535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 265535: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 265555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 266555: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 266575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/apb_driver.sv(31) @ 267575: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 267595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(125) @ 267595: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] RX FIFO is non-empty. ISR = 09000090
+UVM_INFO apb/apb_driver.sv(31) @ 267595: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 267625: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(139) @ 267625: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] CAN Status = 44000022
+UVM_WARNING apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(144) @ 267625: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] CAN controller is still busy
+UVM_INFO apb/apb_driver.sv(31) @ 267625: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 267655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(148) @ 267655: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Interrupt Status = 09000090
+UVM_INFO apb/apb_driver.sv(31) @ 267655: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 267685: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(154) @ 267685: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Error Counter = 00000000
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(167) @ 267685: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Reading RX_ID
+UVM_INFO apb/apb_driver.sv(31) @ 267685: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 267715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(171) @ 267715: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] RX_ID = 04180010
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(175) @ 267715: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Reading RX_DLC
+UVM_INFO apb/apb_driver.sv(31) @ 267715: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 267745: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(179) @ 267745: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] RX_DLC = 80000000
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(183) @ 267745: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Reading RX_DW1
+UVM_INFO apb/apb_driver.sv(31) @ 267745: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 267775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(187) @ 267775: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] RX_DW1 = aabbccdd
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(191) @ 267775: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Reading RX_DW2
+UVM_INFO apb/apb_driver.sv(31) @ 267775: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO can/can_scoreboard.sv(573) @ 267805: uvm_test_top.can_e.can_scb [CAN_SB] DUT_RX frame matched successfully
+UVM_INFO apb/apb_driver.sv(33) @ 267805: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(195) @ 267805: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] RX_DW2 = 11223344
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(204) @ 267805: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] RX_ID matched successfully
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(211) @ 267805: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] RX DLC matched successfully
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(218) @ 267805: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] RX data matched successfully
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(225) @ 267805: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] RX data matched successfully
+UVM_INFO apb/apb_driver.sv(31) @ 267805: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 267835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(232) @ 267835: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Final Interrupt Status = 09000090
+UVM_INFO apb/apb_driver.sv(31) @ 267835: uvm_test_top.can_e.apb_agt.driver [APB_DRV] Received APB transaction
+UVM_INFO apb/apb_driver.sv(33) @ 267865: uvm_test_top.can_e.apb_agt.driver [APB_DRV] APB transfer completed
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(238) @ 267865: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Final Error Counter = 00000000
+UVM_INFO apb/can_ral_sequence/can_tx_ext_loopback_seq.sv(242) @ 267865: uvm_test_top.can_e.apb_agt.sequencer@@ral_seq_loopback_ex [CAN_TX_SEQ] Internal loopback sequence completed
+UVM_INFO can/can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv(25) @ 267865: uvm_test_top.can_e.virtual_seqr@@v_seq_lb_ex [VSEQ] APB RAL sequence completed
+UVM_INFO can/can_virtual_sequences/can_ext_frame_loopback_virtual_seq.sv(29) @ 267865: uvm_test_top.can_e.virtual_seqr@@v_seq_lb_ex [VSEQ] Virtual sequence completed
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_objection.svh(1276) @ 267865: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO can/can_scoreboard.sv(587) @ 267865: uvm_test_top.can_e.can_scb [CAN_SB] Scoreboard summary: PASS=1 ERROR=0 Expected TX frames remaining=0 Expected RX frames remaining=0
+UVM_INFO can/can_subscriber.sv(187) @ 267865: uvm_test_top.can_e.can_subscrb [can_subscriber] [APB] Functional Coverage = 61.97%
+UVM_INFO can/can_subscriber.sv(189) @ 267865: uvm_test_top.can_e.can_subscrb [can_subscriber] [CAN] Functional Coverage = 0.00%
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_catcher.svh(705) @ 267865: reporter [UVM/REPORT/CATCHER] 
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+UVM_INFO /fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_report_server.svh(894) @ 267865: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  612
+UVM_WARNING :    1
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[APB_DRV]   566
+[CAN_PASS_MON]     2
+[CAN_SB]     3
+[CAN_TX_SEQ]    31
+[RNTST]     1
+[TEST]     1
+[TEST_DONE]     1
+[UVM/CONFIGDB/SPELLCHK]     1
+[UVM/RELNOTES]     1
+[UVM/REPORT/CATCHER]     1
+[VSEQ]     3
+[can_subscriber]     2
+
+$finish called from file "/fetools/synopsys/installed_tools/vcs/vcs/Q-2020.03-SP2-8/etc/uvm-1.2/base/uvm_root.svh", line 527.
+$finish at simulation time               267865
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 267865
+CPU Time:      0.940 seconds;       Data structure size:   0.7Mb
+Thu Nov 26 14:38:40 2026
+CPU time: 18.367 seconds to compile + .543 seconds to elab + .885 seconds to link + 1.006 seconds in simulation

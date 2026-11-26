@@ -17,6 +17,7 @@ package apb_pkg;
 `include "can_ral_sequence/can_ext_rx_basic_seq.sv"
 `include "can_ral_sequence/can_tx_basic_loopback_seq.sv"
 `include "can_ral_sequence/can_tx_ext_loopback_seq.sv"
+`include "can_ral_sequence/can_tx_arb_seq.sv"
 
 
 endpackage
